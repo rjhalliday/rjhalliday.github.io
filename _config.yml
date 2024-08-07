@@ -1,0 +1,12 @@
+# Site settings
+title: R Halliday
+description: Russell's blog
+url: https://rjhalliday.github.io
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-slate
+
+# Additional settings
+collections:
+  - posts
