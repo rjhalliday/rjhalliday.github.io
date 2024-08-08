@@ -20,6 +20,6 @@ theme: jekyll-theme-minimal
 #collections:
 #  - posts
 
-collections:
-  tags:
-    output: true
+#collections:
+#  tags:
+#    output: true
