@@ -14,9 +14,11 @@ Welcome to my blog! Here, I share insights and updates on topics that interest m
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
       <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
     </li>
   {% endfor %}
 </ul>
+
 
 ## About
 
