@@ -21,7 +21,7 @@ plugins:
 
 # Additional settings
 # Number of listings per page
-paginate: 5
+paginate: 3
 
 # Paginate path
 paginate_path: /blog/page:num/
