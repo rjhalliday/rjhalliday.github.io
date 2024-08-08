@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Add other head elements like meta tags or favicon here -->
+</head>
+<body>
+  <header>
+    <!-- Include header content, such as site navigation -->
+    <nav>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <article>
+      <h1>{{ page.title }}</h1>
+      <p><em>Published on {{ page.date | date: "%B %d, %Y" }}</em></p>
+      {{ content }}
+    </article>
+  </main>
+  
+  <footer>
+    <!-- Include footer content here -->
+    <p>&copy; {{ site.title }} {{ site.time | date: "%Y" }}</p>
+  </footer>
+</body>
+</html>
