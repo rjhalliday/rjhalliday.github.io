@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why Python Is the Ideal Language for Machine Learning, AI, and Data Science"
+title: "The Current State of Investment in FTTP for Existing HFC Operators"
 date: 2024-07-01 00:00:00 +1000
 categories: [broadband]
 tags: [hfc, fttp]
