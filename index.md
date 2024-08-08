@@ -19,7 +19,7 @@ Welcome to my blog! Here, I share insights and updates on topics that interest m
   {% endfor %}
 </ul>
 
-
+To view more of my blog posts, check out the [Previous Posts](/blog/).
 ## About
 
 I’m passionate about the evolving fields of Artificial Intelligence (AI) and Machine Learning (ML), with a particular focus on Large Language Models (LLMs), Convolutional Neural Networks (CNNs), and Recurrent Neural Networks (RNNs). My background in telecommunications has given me a strong foundation in network management systems and RF technologies, complemented by hands-on experience in embedded software development and hardware on 8-bit and 16-bit platforms, as well as creating kernel drivers for PowerPC systems.
