@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Russell's Blog
+title: Russell's Signal to Intelligence
 ---
 
-# Welcome to Russell's Blog
+# Welcome to Russell's Signal to Intelligence
 
-Welcome to my blog, covering AI, ML, LLM, Python, Cloud, HFC, and more.
+Welcome to Russell's Signal to Intelligence, a blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
 
 ## Latest Posts
 
