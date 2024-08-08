@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Why Python Is the Ideal Language for Machine Learning, AI, and Data Science"
 date: 2024-06-01 00:00:00 +1000
 categories: [ai, llm, data-science]
