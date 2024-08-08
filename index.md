@@ -3,9 +3,9 @@ layout: default
 title: Russell's Signal to Intelligence
 ---
 
-# Welcome to Russell's Signal to Intelligence
+# Russell's Signal to Intelligence
 
-Welcome to Russell's Signal to Intelligence, a blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
+Russell's Signal to Intelligence, a blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
 
 ## Latest Posts
 
