@@ -7,19 +7,30 @@ url: "https://rjhalliday.github.io"
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-minimal
+
+
 #jekyll-theme-slate
 # jekyll-theme-cayman
 #remote_theme: pages-themes/cayman@v0.2.0
-#plugins:
+plugins:
+- jekyll-paginate
 #- jekyll-remote-theme # add this line to the plugins list if you already have one
 #theme: cayman
 #jekyll-theme-slate
 #jekyll-theme-minimal
 
 # Additional settings
+# Number of listings per page
+paginate: 5
+
+# Paginate path
+paginate_path: /blog/page:num/
+
+
 #collections:
 #  - posts
 
 #collections:
 #  tags:
 #    output: true
+
