@@ -3,9 +3,9 @@ layout: default
 title: Russell's Blog
 ---
 
-# Welcome to My Blog
+# Welcome to Russell's Blog
 
-Welcome to my blog! Here, I share insights and updates on topics that interest me. Feel free to browse around and read my latest posts.
+Welcome to my blog, covering AI, ML, LLM, Python, Cloud, HFC, and more.
 
 ## Latest Posts
 
