@@ -5,9 +5,9 @@ url: https://rjhalliday.github.io
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-slate
+theme: cayman
+#jekyll-theme-slate
 #jekyll-theme-minimal
-#
 
 # Additional settings
 collections:
