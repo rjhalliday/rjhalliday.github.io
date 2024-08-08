@@ -19,3 +19,7 @@ theme: jekyll-theme-minimal
 # Additional settings
 #collections:
 #  - posts
+
+collections:
+  tags:
+    output: true
