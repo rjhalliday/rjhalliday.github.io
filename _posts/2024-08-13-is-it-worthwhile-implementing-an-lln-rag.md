@@ -169,7 +169,8 @@ Explain the family tree described in the song "I'm my own Grandpa" by Dwight Lat
 ```
 LLM Response:
 ```
-The song "I'm My Own Grandpa," popularized by artists like Dwight Latham and Moe Jaffe, humorously describes a convoluted family tree that leads to the singer becoming his own grandfather. Here’s a breakdown of how this family tree works:
+The song "I'm My Own Grandpa," popularized by artists like Dwight Latham and Moe Jaffe, humorously describes a convoluted family
+tree that leads to the singer becoming his own grandfather. Here’s a breakdown of how this family tree works:
 
     The Singer's Father Marries the Singer's Wife's Daughter
 (truncated)
@@ -201,9 +202,13 @@ LLM Response:
 ```
 ChatGPT
 
-The song "I'm My Own Grandpa" plays with family relationships in a humorous and complex way. Here's a breakdown of the relationships involved:
-    The Narrator is initially married to a widow who has a grown-up daughter.
-    The widow's daughter (the narrator's step-daughter) ends up marrying the narrator’s father.
+The song "I'm My Own Grandpa" plays with family
+relationships in a humorous and complex way.
+Here's a breakdown of the relationships involved:
+* The Narrator is initially married to a widow
+who has a grown-up daughter.
+* The widow's daughter (the narrator's step-
+daughter) ends up marrying the narrator’s father.
 (truncated)
 ```
 As you can see the response from the LLM is vastly improved, even though the lyrics to this song are [publically available](https://gean.wwco.com/grandpa/) and would almost certainly been included in the LLM's training data. This shows the benefits of RAG and how even when using a smaller LLM, that it can deliber impressive results.
