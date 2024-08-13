@@ -6,9 +6,6 @@ categories: [llm]
 tags: [llm, gpt]
 ---
 
-Table of Contents
-{:toc}
-
 An LLM RAG (Language Model with Retrieval-Augmented Generation) combines a large language model with information retrieval techniques (such as from a document repository) to generate more accurate and contextually relevant responses.
 
 In this post I'll look at the pro's and con's of implementing a RAG, and give some examples:
