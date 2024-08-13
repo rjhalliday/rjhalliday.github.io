@@ -5,7 +5,7 @@ title: Russell's Signal to Intelligence
 
 # Russell's Signal to Intelligence
 
-Russell's Signal to Intelligence, a blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
+A blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
 
 ## Latest Posts
 
