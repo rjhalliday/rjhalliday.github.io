@@ -7,6 +7,9 @@
     <title>Post Data Example</title>
     <script>
         async function postData() {
+            // tell the users we're searching for the response
+            document.getElementById('result').textContent="loading response..."
+            
             const url = 'https://40vvly4vmh.execute-api.us-east-1.amazonaws.com/dev/cablelabsknowledgebase'; // Replace with your URL
             const userInput = document.getElementById('userInput').value;
 
@@ -21,7 +24,7 @@
 
                 if (response.ok) {
                     const result = await response.json();
-                    document.getElementById('result').textContent = `Response: ${JSON.stringify(result.result)}`;
+                    document.getElementById('result').textContent = `${JSON.stringify(result.result)}`;
                 } else {
                     document.getElementById('result').textContent = `Error: ${response.statusText}`;
                 }
