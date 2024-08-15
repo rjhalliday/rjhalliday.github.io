@@ -19,7 +19,7 @@
             box-sizing: border-box;
         }
         .response-container {
-            margin-bottom: 20px;
+            margin-bottom: 20px; appending to the fariable 
         }
         .input-container {
             padding: 20px;
@@ -65,7 +65,8 @@
                     const result = await response.json();
                     resultDiv.innerHTML = `
                         <strong>Input:</strong> ${userInput}<br>
-                        <strong>Response:</strong> ${result.result}
+                        <strong>Response:</strong> ${result.result}<br>
+                        <strong>References:</strong> ${result.references}
                     `;
                 } else {
                     resultDiv.innerHTML = `
