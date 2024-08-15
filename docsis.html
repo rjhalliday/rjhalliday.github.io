@@ -63,6 +63,9 @@
 
                 if (response.ok) {
                     const result = await response.json();
+                    // replaces linebreak in references with <br>
+                    ${result.references}.replace(/\n/g, '<br>');
+                    
                     resultDiv.innerHTML = `
                         <strong>Input:</strong> ${userInput}<br>
                         <strong>Response:</strong> ${result.result}<br>
