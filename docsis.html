@@ -34,6 +34,50 @@
         .button-container {
             text-align: right;
         }
+       /* Watermark styles */
+        body::before {
+        body {
+            position: relative; /* Ensure that pseudo-elements are positioned correctly */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .results-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .response-container {
+            margin-bottom: 20px;
+        }
+        .input-container {
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(249, 249, 249, 0.8); /* Slightly transparent background */
+            border-top: 1px solid #ddd;
+        }
+        .button-container {
+            text-align: right;
+        }
+        /* Watermark styles */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('your-watermark-image-url.jpg'); /* Replace with your watermark image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.1; /* Adjust this value to make the image more or less faint */
+            pointer-events: none; /* Ensure that the watermark does not interfere with user interactions */
+            z-index: -1; /* Ensure that the watermark is behind the content */
+        }
         /* Loading indicator styles */
         #loadingIndicator {
             display: none;
