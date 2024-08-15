@@ -6,58 +6,38 @@
     <title>Post Data Example</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('/cable-headend.webp'); /* Replace with your watermark image URL */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        .results-container {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .response-container {
-            margin-bottom: 20px; appending to the fariable 
-        }
-        .input-container {
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #f9f9f9;
-            border-top: 1px solid #ddd;
-        }
-        .button-container {
-            text-align: right;
-        }
-       /* Watermark styles */
-        body::before {
-        body {
             position: relative; /* Ensure that pseudo-elements are positioned correctly */
             display: flex;
             flex-direction: column;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background-image: url('your-watermark-image-url.jpg'); /* Replace with your watermark image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         .results-container {
             flex: 1;
             overflow-y: auto;
             padding: 20px;
             box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+            border-radius: 8px; /* Rounded corners for visual appeal */
         }
         .response-container {
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent for better contrast */
+            border: 1px solid #ddd; /* Light border to define container */
+            border-radius: 4px; /* Rounded corners */
         }
         .input-container {
             padding: 20px;
             box-sizing: border-box;
             background-color: rgba(249, 249, 249, 0.8); /* Slightly transparent background */
             border-top: 1px solid #ddd;
+            border-radius: 8px; /* Rounded corners */
         }
         .button-container {
             text-align: right;
@@ -74,7 +54,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.1; 
+            opacity: 0.1; /* Adjust this value to make the image more or less faint */
             pointer-events: none; /* Ensure that the watermark does not interfere with user interactions */
             z-index: -1; /* Ensure that the watermark is behind the content */
         }
@@ -107,12 +87,12 @@
         async function postData(event) {
             event.preventDefault(); // Prevent the default form submission
 
-            const url = `https://40vvly4vmh.execute-api.us-east-1.amazonaws.com/dev/cablelabsknowledgebase?sessionId=${sessionId}`; // docsis kb api gateway url
+            const url = `https://40vvly4vmh.execute-api.us-east-1.amazonaws.com/dev/cablelabsknowledgebase?sessionId=${sessionId}`;
             const userInput = document.getElementById('userInput').value;
 
             // Show the loading indicator
             document.getElementById('loadingIndicator').style.display = 'block';
-            
+
             try {
                 const response = await fetch(url, {
                     method: 'POST',
@@ -127,7 +107,6 @@
 
                 if (response.ok) {
                     const result = await response.json();
-                    // replaces linebreak in references with <br>
                     let refences_with_br = result.references.replace(/\n/g, '<br>');
                     
                     resultDiv.innerHTML = `
@@ -142,7 +121,6 @@
                     `;
                 }
                 
-                // Append the result to the results container
                 document.getElementById('results').appendChild(resultDiv);
 
                 // Clear input field
