@@ -124,6 +124,10 @@
 
                 // Create new input field and submit button
                 createNewInput();
+                
+                // Scroll to the bottom of the results container
+                scrollToBottom();
+
             } catch (error) {
                 const resultDiv = document.createElement('div');
                 resultDiv.className = 'response-container';
@@ -138,6 +142,10 @@
 
                 // Create new input field and submit button
                 createNewInput();
+
+                // Scroll to the bottom of the results container
+                scrollToBottom();
+                
             } finally {
                 // Hide the loading indicator
                 document.getElementById('loadingIndicator').style.display = 'none';
@@ -163,6 +171,11 @@
             createNewInput(); // Create a new input field and submit button
         }
 
+        function scrollToBottom() {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.scrollTop = resultsContainer.scrollHeight;
+        }
+        
         window.onload = () => {
             sessionId = generateSessionId(); // Initialize session ID when the page loads
             createNewInput(); // Create initial input field and button
