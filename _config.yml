@@ -1,9 +1,9 @@
 # Site settings
 title: Signal to Intelligence
+logo: /assets/img/logo.png
 #email: @gmail.com
 description: Russell's Signal to Intelligence
 url: "https://rjhalliday.github.io"
-logo: /assets/img/logo.png
 
 # Build settings
 markdown: kramdown
