@@ -7,7 +7,7 @@ url: "https://rjhalliday.github.io"
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-minimal
-
+logo: /asssets/images/logo.png
 
 #jekyll-theme-slate
 # jekyll-theme-cayman
