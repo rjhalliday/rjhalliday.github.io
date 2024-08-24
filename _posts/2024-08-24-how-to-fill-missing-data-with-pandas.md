@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to fill missing data with Pandas"
-date: 2024-08-24 22:49:00 +1000
+date: 2024-08-24 00:00:00 +1000
 categories: [pandas]
 tags: [pandas, data-science]
 ---
