@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A simple example of github actions, in action"
-date: 2024-08-24 23:00:00 +1000
+date: 2024-08-24 22:50:00 +1000
 categories: [cicd]
 tags: [github, python, cicd]
 ---
