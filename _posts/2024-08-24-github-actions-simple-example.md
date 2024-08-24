@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A simple example of github actions, in action"
-date: 2024-08-24 00:00:00 +1000
+date: 2024-08-24 23:00:00 +1000
 categories: [cicd]
 tags: [github, python, cicd]
 ---
@@ -133,7 +133,7 @@ git push
 Once pushed, GitHub Actions will automatically run the workflow defined in `python-app.yml` and execute the unit tests. You can check the results of the workflow on the "Actions" tab in your GitHub repository.
 
 You can check the result in Github actions:
-![Successful test case](images/github-actions-simple-example-test-case-success.png)
+![Successful test case](/images/github-actions-simple-example-test-case-success.png)
 
 Let's modify the test case so it fails:
 ```python
@@ -152,4 +152,4 @@ if __name__ == '__main__':
 ```
 
 In github actions you can see that this failed:
-![Failed test case](images/github-actions-simple-example-test-case-failure.png)
+![Failed test case](/images/github-actions-simple-example-test-case-failure.png)
