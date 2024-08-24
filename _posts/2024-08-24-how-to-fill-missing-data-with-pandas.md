@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to fill missing data with Pandas"
-date: 2024-08-24 00:00:00 +1000
+date: 2024-08-24 22:49:00 +1000
 categories: [pandas]
 tags: [pandas, data-science]
 ---
@@ -86,3 +86,5 @@ This method performs linear interpolation by default but can be customized for d
 ## Wrapping Up
 
 So there you have it! fillna is an incredibly versatile tool for dealing with missing data. Whether you need to replace NaN values with a constant, carry forward previous values, or interpolate, pandas has got you covered. Give it a try in your next data project and watch your data clean up nicely!
+
+You can find the example repository (here)[https://github.com/rjhalliday/github-actions-example]
