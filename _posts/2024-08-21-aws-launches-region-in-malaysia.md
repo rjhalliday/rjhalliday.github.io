@@ -33,10 +33,6 @@ The stories of AWS customers in Malaysia, from PayNet’s national payment workl
 
 AWS’s commitment to building cloud skills in Malaysia through initiatives like Program AKAR, AWS Academy, and the AWS Skills Guild at PETRONAS ensures that the next generation of builders will have the tools and knowledge they need to thrive in this new digital era. As someone who has navigated the challenges of Malaysia’s tech landscape for years, I’m incredibly excited to see how these programs will shape the future of innovation in the country.
 
-#### A Sustainable Path Forward
-
-Beyond technology, AWS’s collaboration with local companies like Petronas and Gentari to accelerate sustainability and decarbonization efforts highlights a broader commitment to creating a better future for Malaysia. This aligns with Amazon’s global mission to achieve net-zero carbon by 2040 and is a crucial step toward ensuring that the benefits of this technological revolution are shared by everyone.
-
 #### A Bright Future Ahead
 
 The launch of the AWS Asia Pacific (Malaysia) Region is more than just an expansion of infrastructure; it’s a catalyst for innovation, growth, and sustainability. For someone like me, who has seen the evolution of Malaysia’s tech scene firsthand, this moment is both nostalgic and exhilarating. The challenges of the past are now opportunities for the future, and I can’t wait to see what the next decade will bring for Malaysia and the broader Southeast Asian region.
