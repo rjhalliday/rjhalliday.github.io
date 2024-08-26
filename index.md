@@ -37,19 +37,24 @@ Feel free to explore my posts, where I delve into these exciting areas and more.
 ## Categories
 
 <ul>
-  {% for category in site.categories %}
-    <li>
-      <a href="{{ site.baseurl }}/categories/{{ category[0] }}">{{ category[0] }}</a>
-    </li>
-  {% endfor %}
+{% for category in site.categories %}
+  <li>
+    <a href="{{ site.baseurl }}/categories/{{ category[0] }}">
+      {{ category[0] }} ({{ category[1].size }})
+    </a>
+  </li>
+{% endfor %}
 </ul>
 
 ## Tags
 
 <ul>
-  {% for tag in site.tags %}
-    <li>
-      <a href="{{ site.baseurl }}/tags/{{ tag[0] }}">{{ tag[0] }}</a>
-    </li>
-  {% endfor %}
+{% for category in site.categories %}
+  <li>
+    <a href="{{ site.baseurl }}/categories/{{ category[0] }}">
+      {{ category[0] }} ({{ category[1].size }})
+    </a>
+  </li>
+{% endfor %}
 </ul>
+
