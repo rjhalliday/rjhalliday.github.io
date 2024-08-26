@@ -8,6 +8,8 @@ tags: [aws, github, python]
 
 # Streamline Your AWS Lambda Deployments: A Guide to Blue-Green Deployment with GitHub Actions
 
+![Blue Green Deployments](/assets/blue-green.png)
+
 Deploying updates to AWS Lambda can be a challenging task, especially when aiming to minimize downtime and avoid potential disruptions. That's where Blue-Green Deployment comes in. In this post, I'll walk you through how I set up Blue-Green Deployment for my AWS Lambda function using GitHub Actions.
 
 ## What is Blue-Green Deployment?
