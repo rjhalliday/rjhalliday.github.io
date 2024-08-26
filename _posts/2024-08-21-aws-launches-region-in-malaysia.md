@@ -9,6 +9,9 @@ tags: [aws, cloud, kuala-lumpur, malaysia]
 
 ### A New Era of Innovation: AWS Launches in Malaysia
 
+![Kuala Lumpur](/images/kuala-lumpur-klcc.jpg)
+
+
 It’s been over a decade since I last managed servers in Malaysia, a time when rack-mounted servers were the norm, and I was running a WiFi and paid computer kiosk authentication system based on FreeRadius and MySQL. Back then, I was challenged by the latency to New Zealand and Australia, which caused persistent issues with our setup. Fast forward to today, and the technological landscape in Malaysia has transformed in ways that I could only dream of during those early days.
 
 The recent launch of the AWS Asia Pacific (Malaysia) Region marks a significant milestone not just for cloud computing in Malaysia but also for innovators like myself who have deep ties to the country. With three Availability Zones and the API name ap-southeast-5, this new region offers unprecedented opportunities for businesses and developers to leverage cutting-edge technology right at their doorstep.
