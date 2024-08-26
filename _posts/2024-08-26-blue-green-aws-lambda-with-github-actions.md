@@ -245,6 +245,11 @@ jobs:
 - **Update Green alias**: Points the Green alias to the newly deployed version.
 - **Delete function zip file**: Cleans up the ZIP file used for deployment.
 
+**AWS Console:**
+
+![New version deployed. Green pointed to this newly deployed version](/images/gitlab-actions-deploy-green.png)
+*Checking the Alises on the AWS Console for the Lambda function, you can see that Green in a new version (version 20)*
+
 ### 3. `promote_green_to_blue.yml`
 
 This workflow manually promotes the Green environment to Blue, making the new version live. It’s triggered manually through the GitHub Actions interface.
@@ -294,6 +299,12 @@ jobs:
 You can manually trigger this via the GitHub web interface under actions:
 ![Manually trigger actions](/images/github-manually-trigger-actions.png)
 
+**AWS Console:**
+
+![Blue now points to the Green version](/images/gitlab-actions-promote-green-to-blue.png)
+
+*Checking the Alises on the AWS Console for the Lambda function, you can see that Blue now points to the save version as Green (version 21), and that last-known-good points to the old Blue version (version 20)*
+
 ### 4. `rollback_blue.yml`
 
 This workflow manually rolls back Blue to the Last Known Good version of Blue, which was set in romote_green_to_blue.yml prior to pointoint Blue to the Green version.
@@ -333,9 +344,13 @@ jobs:
 **How it works:**
 - **Checkout code**: Fetches the latest code from the repository.
 - **Set up AWS CLI**: Configures AWS CLI with credentials from GitHub Secrets.
-- **Get Green alias version**: Retrieves the version number currently assigned to the Green alias.
-- **Update last-known-good**: Points last known good to the current Blue version, so we can rollback later if necessarry.
-- **Update Blue alias**: Points the Blue alias to the Green version, making it live.
+- **Set Blue to Last Known Good**: Points Blue to the version pointed to by the last-known-good aslias. This was set by the 'romote_green_to_blue.yml' workflow.
+
+**AWS Console:**
+
+![Blue now points to the Green version](/images/gitlab-actions-rollback-blue.png)
+
+*Checking the Alises on the AWS Console for the Lambda function, you can see that Blue now points to the last-known-good version (version 20), which was updated before Blue was pointed to the same version as Green. Note that last-known-good remains at the same version (version 20), as we don't track the previous last-known-good version.*
 
 ## Testing the Lambda Function
 
@@ -386,6 +401,3 @@ if __name__ == '__main__':
 
 By setting up Blue-Green Deployment with these GitHub Workflows, I’ve streamlined the deployment process for my AWS Lambda functions, ensuring safer and more efficient updates. This approach minimizes downtime and reduces the risk of disruptions. If you have any questions or need further customization, feel free to reach out. Happy deploying!
 
----
-
-I hope this guide helps you understand how to implement Blue-Green Deployment with GitHub Workflows for AWS Lambda. If you need more details or have specific requirements, just let me know!
