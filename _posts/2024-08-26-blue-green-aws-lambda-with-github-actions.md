@@ -6,9 +6,9 @@ categories: [github, aws]
 tags: [aws, github, python]
 ---
 
-# Streamline Your AWS Lambda Deployments: A Guide to Blue-Green Deployment with GitHub Workflows**
+# Streamline Your AWS Lambda Deployments: A Guide to Blue-Green Deployment with GitHub Actions
 
-Deploying updates to AWS Lambda can be a challenging task, especially when aiming to minimize downtime and avoid potential disruptions. That's where Blue-Green Deployment comes in. In this post, I'll walk you through how I set up Blue-Green Deployment for my AWS Lambda function using GitHub Workflows.
+Deploying updates to AWS Lambda can be a challenging task, especially when aiming to minimize downtime and avoid potential disruptions. That's where Blue-Green Deployment comes in. In this post, I'll walk you through how I set up Blue-Green Deployment for my AWS Lambda function using GitHub Actions.
 
 ## What is Blue-Green Deployment?
 
@@ -113,9 +113,9 @@ def lambda_handler(event, context):
 
 With these steps, you can create, version, and manage AWS Lambda functions effectively, enabling you to test and deploy different versions with ease.
 
-## GitHub Workflows
+## GitHub Actions Workflows
 
-To implement Blue-Green Deployment, I’ve set up three GitHub Workflows: `build_and_test.yml`, `deploy.yml`, and `promote_green_to_blue.yml`.
+To implement Blue-Green Deployment, I’ve set up three GitHub Actions workflows: `build_and_test.yml`, `deploy.yml`, and `promote_green_to_blue.yml`.
 * build_and_test.yml handles building and testing
 * deploy.yml deploys the new code to the Green environment after build_and_test successfully finishes. This works by pointing the Green alias in AWS to the version of the AWS file 
 * promot_green_to_blue.yml is run manually to promote Green to Blue, which just repoints Blue to the same version of the lambda function that is 
@@ -399,5 +399,5 @@ if __name__ == '__main__':
 
 ## Conclusion
 
-By setting up Blue-Green Deployment with these GitHub Workflows, I’ve streamlined the deployment process for my AWS Lambda functions, ensuring safer and more efficient updates. This approach minimizes downtime and reduces the risk of disruptions. If you have any questions or need further customization, feel free to reach out. Happy deploying!
+By setting up Blue-Green Deployment with these GitHub Actions workflows, I’ve streamlined the deployment process for my AWS Lambda functions, ensuring safer and more efficient updates. This approach minimizes downtime and reduces the risk of disruptions. If you have any questions or need further customization, feel free to reach out. Happy deploying!
 
