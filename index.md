@@ -49,10 +49,10 @@ Feel free to explore my posts, where I delve into these exciting areas and more.
 ## Tags
 
 <ul>
-{% for category in site.categories %}
+{% for tag in site.tags %}
   <li>
-    <a href="{{ site.baseurl }}/categories/{{ category[0] }}">
-      {{ category[0] }} ({{ category[1].size }})
+    <a href="{{ site.baseurl }}/tags/{{ tag[0] }}">
+      {{ tag[0] }} ({{ tag[1].size }})
     </a>
   </li>
 {% endfor %}
