@@ -339,21 +339,40 @@ jobs:
 
 ## Testing the Lambda Function
 
-For testing, I use `test_resume_scan.py` to ensure my Lambda function behaves as expected:
+For testing, I use `test_hello_world.py` to ensure my Lambda function behaves as expected:
 
 ```python
 import unittest
 from unittest.mock import Mock
-from resume_scan import lambda_handler
+from hello_world import lambda_handler
+
 
 class TestLambdaHandler(unittest.TestCase):
     def setUp(self):
-        self.mock_context = Mock()  # Mock context object if needed
+        # This method will be called before each test
+        self.mock_context = Mock()  # You can mock the context object if needed
 
     def test_lambda_handler(self):
+        # Test case 1: Testing with a sample event
         event = {'key': 'value'}
-        expected_result = {'statusCode': 200, 'body': 'Hello from resume-scan v8'}
+        expected_result = {'statusCode': 200, 'body': 'Success'}
         self.assertEqual(lambda_handler(event, self.mock_context), expected_result)
+
+        # Test case 2: Testing with another sample event
+        event = {'key': 'another_value'}
+        expected_result = {'statusCode': 200, 'body': 'Another Success'}
+        self.assertEqual(lambda_handler(event, self.mock_context), expected_result)
+
+        # Test case 3: Testing with an edge case event
+        event = {'key': None}
+        expected_result = {'statusCode': 400, 'body': 'Bad Request'}
+        self.assertEqual(lambda_handler(event, self.mock_context), expected_result)
+
+        # Test case 4: Testing with a malformed event
+        event = {}
+        expected_result = {'statusCode': 500, 'body': 'Internal Server Error'}
+        self.assertEqual(lambda_handler(event, self.mock_context), expected_result)
+
 
 if __name__ == '__main__':
     unittest.main()
