@@ -12,13 +12,13 @@ tags: [aws, cloud, kuala-lumpur, malaysia]
 ![Kuala Lumpur](/images/kuala-lumpur-klcc.jpg)
 
 
-It’s been over a decade since I last managed servers in Malaysia, a time when rack-mounted servers were the norm, and I was running a WiFi and paid computer kiosk authentication system based on FreeRadius and MySQL. Back then, I was challenged by the latency to New Zealand and Australia, which caused persistent issues with our setup. Fast forward to today, and the technological landscape in Malaysia has transformed in ways that I could only dream of during those early days.
+It’s been over a decade since I last managed servers in Malaysia, a time when rack-mounted servers were the norm, and I was running a WiFi and paid computer kiosk authentication system based on FreeRadius and MySQL. Back then, I was challenged by the latency to New Zealand and Australia, which caused persistent issues with our setup, as well as the need to maintain physical servers at the data centre. Fast forward to today, and the technological landscape in Malaysia has transformed in ways that I could only dream of during those early days.
 
 The recent launch of the AWS Asia Pacific (Malaysia) Region marks a significant milestone not just for cloud computing in Malaysia but also for innovators like myself who have deep ties to the country. With three Availability Zones and the API name ap-southeast-5, this new region offers unprecedented opportunities for businesses and developers to leverage cutting-edge technology right at their doorstep.
 
 #### A Personal Connection to Malaysia’s Growth
 
-Having spent significant time in Malaysia over the past two decades and with close family ties to the country, this launch feels particularly special to me. I remember the struggles of dealing with latency and the limitations of the traditional server approach, especially when trying to maintain a reliable system that connected to New Zealand. The idea of having access to an AWS Region within Malaysia back then would have been a game-changer, eliminating many of the issues I faced.
+Although a New Zealander, I have spent significant time in Malaysia over the past two decades, and with close family ties, this launch feels particularly special to me. The idea of having access to an AWS Region within Malaysia back then would have been a game-changer, eliminating many of the issues I faced.
 
 Now, with AWS’s infrastructure in place, the possibilities are endless. The proximity of this region will drastically reduce latency and open up new opportunities for innovation, not just for me but for countless others who have experienced similar challenges.
 
