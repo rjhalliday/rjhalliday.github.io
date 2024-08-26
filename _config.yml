@@ -30,7 +30,10 @@ paginate_path: /blog/page:num/
 #collections:
 #  - posts
 
-#collections:
-#  tags:
-#    output: true
+collections:
+  categories:
+    output: true
+  tags:
+    output: true
+
 
