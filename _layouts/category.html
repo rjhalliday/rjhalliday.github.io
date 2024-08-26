@@ -1,12 +1,16 @@
 ---
 layout: default
+title: Categories
+permalink: /categories/
 ---
 
-<h1>Category: {{ page.category }}</h1>
+<h1>Categories</h1>
 <ul>
-{% for post in site.categories[page.category] %}
+{% for category in site.categories %}
   <li>
-    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <a href="{{ site.baseurl }}/categories/{{ category[0] }}">
+      {{ category[0] }} ({{ category[1].size }})
+    </a>
   </li>
 {% endfor %}
 </ul>
