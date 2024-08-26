@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "A New Era of Innovation: AWS Launches in Malaysia"
-date: 2024-08-26 22:00:00 +1000
+date: 2024-08-21 22:00:00 +1000
 featured_image: /images/kuala-lumpur-klcc.jpg
 categories: [cloud]
 tags: [aws, cloud, kuala-lumpur, malaysia]
@@ -41,4 +41,6 @@ Beyond technology, AWS’s collaboration with local companies like Petronas and 
 
 The launch of the AWS Asia Pacific (Malaysia) Region is more than just an expansion of infrastructure; it’s a catalyst for innovation, growth, and sustainability. For someone like me, who has seen the evolution of Malaysia’s tech scene firsthand, this moment is both nostalgic and exhilarating. The challenges of the past are now opportunities for the future, and I can’t wait to see what the next decade will bring for Malaysia and the broader Southeast Asian region.
 
-Happy building!
+**Malaysia Sentiasa di Hati. Malaysia Boleh!**
+
+![Flight Home](/images/airasia-flight.jpg)
