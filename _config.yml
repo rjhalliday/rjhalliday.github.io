@@ -1,4 +1,5 @@
 # Site settings
+baseurl: ""
 title: Signal to Intelligence
 logo: /assets/img/logo.png
 #email: @gmail.com
