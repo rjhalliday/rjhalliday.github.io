@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Detecting Credit Card Fraud with Isolation Forest in Python"
-date: 2024-08-26 13:00:00 +1000
+date: 2024-08-27 13:00:00 +1000
 categories: [machine-learning]
 tags: [machine-learning, isolation-forest, anomaly-detection, python]
 ---
