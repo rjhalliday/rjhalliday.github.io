@@ -6,9 +6,9 @@ categories: [technology]
 tags: [cloud, career, enterprise-architecture, solution-architecture]
 ---
 
----
-
 ## Understanding the Difference Between a Solution Architect and an Enterprise Architect
+
+![Architecture](/images/architecture.jpg)
 
 I've been asked what the difference between an Enterprise Architect and a Solution Architect is. This is a common question, especially in organizations where both roles exist but their responsibilities seem to blur. To clarify, it’s essential to dive into what each role entails, how they contribute to the organization, and why both are crucial in driving successful IT strategies.
 
