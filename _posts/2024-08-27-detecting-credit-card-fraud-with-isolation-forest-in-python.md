@@ -198,3 +198,5 @@ plt.show()
 ```
 
 I hope this breakdown and code example help you understand how to use Isolation Forest for anomaly detection in credit card transactions. Whether you're dealing with real-world data or working on a similar problem, this approach can be a powerful tool in your data science toolkit.
+
+You can find sample code on my github repository [here](https://github.com/rjhalliday/python-anomaly-detection/blob/be048ecb977a2fc9d2fe3b7684e2a7f41fc4c5b4/isolationforest_log_anomaly_detection.ipynb)
