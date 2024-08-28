@@ -150,4 +150,4 @@ To help you choose the best method, here’s a quick comparison:
 
 Choosing the right method depends on your Lambda function’s complexity and dependency management needs. Deployment Packages are great for simple setups, Lambda Layers help manage shared code, and Container Images offer flexibility for more complex scenarios. Understanding these options will help you tailor your approach and streamline your AWS Lambda projects.
 
-My preference is Lambda Layers, as it strickes the best balance in terms of complexity and the kind of single projects that I tend to work on personally.
+My preference is Lambda Layers, as it strikes the right balance for me in terms of complexity, and the kind of single projects that I tend to work on personally.
