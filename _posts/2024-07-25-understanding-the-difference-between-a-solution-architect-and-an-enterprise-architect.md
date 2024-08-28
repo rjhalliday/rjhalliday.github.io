@@ -75,8 +75,6 @@ The journey to becoming a Solution Architect or an Enterprise Architect often st
 
 ## Comparing Solution Architects and Enterprise Architects
 
-![Architecture](/images/architecture.jpg)
-
 To provide a clearer picture of how these roles differ, consider the following comparison:
 
 | Aspect                     | Solution Architect                           | Enterprise Architect                            |
