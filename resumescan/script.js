@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         // Get the values from the form
-        const jobDescription = document.getElementById('job-description').value;
+        const job_description = document.getElementById('job-description').value;
         const resume = document.getElementById('resume').value;
 
         try {
             // Send the data to the AWS Lambda function
-            const response = await fetch('https://your-api-gateway-endpoint.amazonaws.com/dev/process', {
+            const response = await fetch('https://b3iitvjuq6e4zexxpheyf6w4ym0bdtma.lambda-url.us-east-1.on.aws/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    jobDescription,
-                    resume
+                    job_description: job_description,
+                    resume: resume
                 })
             });
 
