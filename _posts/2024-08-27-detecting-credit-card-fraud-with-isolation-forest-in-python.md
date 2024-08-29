@@ -27,13 +27,21 @@ np.random.seed(42)  # For reproducibility
 
 # Generate normal transactions
 num_normal = 1000
-amounts_normal = np.random.normal(loc=50, scale=20, size=num_normal)  # Normal transactions around $50
-timestamps_normal = pd.date_range(start='2024-01-01', periods=num_normal, freq='T')
+amounts_normal = np.random.normal(loc=50, scale=20, size=num_normal)  # Normal transactions around $50, standard deviation 20
+timestamps_normal = pd.date_range(start='2024-01-01', periods=num_normal, freq='D')
 
 # Generate fraudulent transactions
 num_anomalies = 50
 amounts_anomalies = np.random.normal(loc=200, scale=50, size=num_anomalies)  # Fraudulent transactions around $200
-timestamps_anomalies = pd.date_range(start='2024-01-01 17:00', periods=num_anomalies, freq='5T')
+timestamps_anomalies = pd.date_range(start='2026-09-15', periods=num_anomalies, freq='D')
+
+# print a table of normal amounts and timestamps
+print("Normal Amounts:")
+print(pd.DataFrame({'amount': amounts_normal, 'timestamp': timestamps_normal}))
+
+# print a table of anomalous amounts and timestamps
+print("Anomalous Amounts:")
+print(pd.DataFrame({'amount': amounts_anomalies, 'timestamp': timestamps_anomalies}))
 
 # Combine normal and anomalous data
 amounts = np.concatenate([amounts_normal, amounts_anomalies])
@@ -196,6 +204,8 @@ plt.tight_layout()
 # Show plot
 plt.show()
 ```
+
+![Output plot](/images/isolationforest_log_anomaly_detection-output-graph.png)
 
 I hope this breakdown and code example help you understand how to use Isolation Forest for anomaly detection in credit card transactions. Whether you're dealing with real-world data or working on a similar problem, this approach can be a powerful tool in your data science toolkit.
 
