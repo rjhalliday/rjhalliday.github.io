@@ -14,7 +14,7 @@ A blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
 ## Latest Posts
 
 <ul>
-  {% for post in site.posts limit:5 %}
+  {% for post in site.posts limit:10 %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
       <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
