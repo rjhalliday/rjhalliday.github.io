@@ -6,7 +6,9 @@ categories: [aws]
 tags: [aws, devops, cicd]
 ---
 
-## UUnderstanding AWS Correction Of Error (COE) in IT Operations
+## Understanding AWS Correction Of Error (COE) in IT Operations
+
+![Crash](/images/car-crash.jpg)
 
 In IT and cloud operations, I've encountered my fair share of challenges and mistakes. When things don’t go as planned, having a structured approach to address and rectify these errors is crucial. This is where Correction Of Error (COE) comes into play. Let me share what COE is, why it’s important, and provide some real-world examples to illustrate its application.
 
@@ -29,13 +31,13 @@ A Correction Of Error (COE) is a formal document or process I use to identify, c
 
 ### **Real-World Examples of COE**
 
-Let me walk you through two real-world scenarios where COE was crucial in resolving issues and improving processes.
+Let me walk you through two COE scenarios.
 
 #### **Example 1: Security Group Misconfiguration in AWS**
 
 **Incident Summary:**
 
-On August 25, 2024, I faced a problem where a misconfiguration in AWS security groups led to unauthorized access attempts in our production environment. An incorrect set of rules was applied, exposing sensitive data.
+On YY-MM-DD, I faced a problem where a misconfiguration in AWS security groups led to unauthorized access attempts in our production environment. An incorrect set of rules was applied, exposing sensitive data.
 
 **Root Cause:**
 
@@ -63,7 +65,7 @@ The error was due to human oversight during a routine update. I mistakenly copie
 
 **Incident Summary:**
 
-On August 28, 2024, I encountered a scenario where the CI/CD pipeline mistakenly updated the "blue" alias instead of the "green" alias, causing production to point to the wrong deployment.
+On YY-MM-DD, I encountered a scenario where the CI/CD pipeline mistakenly updated the "blue" alias instead of the "green" alias, causing production to point to the wrong deployment.
 
 **Root Cause:**
 
