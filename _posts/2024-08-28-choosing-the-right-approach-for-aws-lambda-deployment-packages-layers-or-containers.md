@@ -10,6 +10,36 @@ tags: [aws, github, python]
 ![Layers of Rocks](/images/stacked-rocks.jpg)
 When working with AWS Lambda, managing your code and dependencies can be approached in a few different ways. Whether you're dealing with a simple function or a more complex setup, it's important to know your options. Let’s dive into the three main methods for handling dependencies in Lambda functions: Deployment Packages, Lambda Layers, and Container Images. I’ll also look at some practical examples to make things clearer.
 
+### Limits
+
+Before I begin, keep in mind:
+
+WS Lambda functions, there are specific limits related to the size of the deployment package, which includes ZIP files used for Lambda functions. As of the latest guidelines:
+Lambda Deployment Package Size Limits
+
+* Deployment Package Size (Compressed): The size of the deployment package (ZIP file) when uploaded directly (i.e., the compressed file) is limited to 50 MB.
+
+* Deployment Package Size (Uncompressed): The size of the deployment package after being uncompressed (unzipped) is limited to 250 MB.
+
+### Python virtual environment
+
+Before I get started, I'm going to assume you're using a Python virtual enviornment (venv). In Python, venv is a module used to create isolated environments for projects. The purpose of venv is to manage dependencies and avoid conflicts between different projects. Here are some key benefits and purposes of using venv:
+
+* Isolation: It creates a separate environment for your project, which includes its own Python interpreter and libraries. This prevents conflicts between dependencies of different projects, as each environment has its own set of packages.
+* Dependency Management: You can install and manage dependencies specific to your project without affecting the global Python environment or other projects. This ensures that different projects can use different versions of the same library without interference.
+* Reproducibility: By using venv, you can ensure that the project runs in the same environment every time, making it easier to reproduce the development setup on different machines or share it with others. You can use a requirements.txt file to list the dependencies and their versions.
+* Cleaner Environment: It helps keep your global Python environment clean and free from unnecessary packages, as you only install what you need for each specific project within its virtual environment.
+
+So first, setup a virtual environment as follows:
+
+```python
+# Create a virtual environment (you can name it as you like)
+python -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate  # On Windows, use `mylayer-env\Scripts\activate`
+```
+
 ### Deployment Packages
 
 **What Are They?**
@@ -21,27 +51,23 @@ Deployment Packages are the traditional way to bundle your Lambda function code 
 
 **How to Create One:**
 
-1. **Create a Virtual Environment:**
-   ```bash
-   python3 -m venv myenv
-   source myenv/bin/activate
-   ```
-
-2. **Install Dependencies:**
+1. **Install Dependencies:**
    ```bash
    pip install <package-name>
    ```
 
-3. **Package the Dependencies:**
+2. **Package the Dependencies:**
    ```bash
-   cd myenv/lib/python3.x/site-packages
-   zip -r9 ${OLDPWD}/function.zip .
+   cd <project directory>
+   cd .venv/lib/python3.x/site-packages
+   # create a the deployment package in the previous directory, that is the project directory.
+   zip -r ${OLDPWD}/function.zip . 
    ```
 
-4. **Add Your Lambda Function Code:**
+3. **Add Your Lambda Function Code:**
    ```bash
    cd $OLDPWD
-   zip -r9 function.zip lambda_function.py
+   zip -u function.zip lambda_function.py
    ```
 
 5. **Deploy the Package to Lambda:**
@@ -49,8 +75,7 @@ Deployment Packages are the traditional way to bundle your Lambda function code 
    aws lambda update-function-code --function-name <your-function-name> --zip-file fileb://function.zip
    ```
 
-**Industry Trend:**
-Deployment Packages are still a solid choice for smaller, simpler projects. They’re easy to use and perfect for straightforward deployments.
+Deployment Packages are practical choice for smaller, simpler projects. They’re easy to use and perfect for straightforward deployments.
 
 ### Lambda Layers
 
@@ -90,8 +115,7 @@ Lambda Layers let you manage shared dependencies and code separately from your m
    aws lambda update-function-configuration --function-name <your-function-name> --layers <layer-arn>
    ```
 
-**Industry Trend:**
-Lambda Layers are increasingly popular for managing dependencies efficiently in complex environments. They’re especially useful for functions that share common libraries or need modular code management.
+Lambda Layers are increasingly popular for managing dependencies efficiently in complex environments. They’re especially useful for functions that share common libraries or need modular code management. The problem is that compressed and uncompressed filesize limit are 50MB and 250MB respectively; this is fine for smaller projects, and it is possible to have multiple layers, however I have found this to be very restrictive when working with GenAI (LLM's).
 
 ### Container Images
 
@@ -150,4 +174,4 @@ To help you choose the best method, here’s a quick comparison:
 
 Choosing the right method depends on your Lambda function’s complexity and dependency management needs. Deployment Packages are great for simple setups, Lambda Layers help manage shared code, and Container Images offer flexibility for more complex scenarios. Understanding these options will help you tailor your approach and streamline your AWS Lambda projects.
 
-My preference is Lambda Layers, as it strikes the right balance for me in terms of complexity, and the kind of single projects that I tend to work on personally.
+My preference is Lambda Layers, as it strikes the right balance for me in terms of complexity, but increasingly I've had to turn to docker images.
