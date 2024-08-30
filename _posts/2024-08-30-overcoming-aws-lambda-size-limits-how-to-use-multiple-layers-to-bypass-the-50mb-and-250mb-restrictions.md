@@ -153,3 +153,82 @@ Below is a comprehensive guide to creating AWS Lambda layers for `langchain_goog
    Adjust the python version to match your needs.
 
 You can use the same steps above to create multiple lambd layers of your choosing. In my case, I use three layers, one each for  `langchain_google_genai` and `langchain_community`, plus another layer for other (smaller) libraries.
+
+## Configuring your lambda functoin use the uploaded layers
+
+Once you've created and uploaded your Lambda layers, you need to configure your Lambda function to use these layers. Here's how you can do this using both the AWS Management Console and the AWS CLI:
+
+### Configuring Your Lambda Function to Use Layers
+
+#### Using the AWS Management Console
+
+1. **Log in to the AWS Management Console.**
+
+2. **Navigate to the Lambda Service:**
+
+   - In the AWS Management Console, go to the **Lambda** service.
+
+3. **Select Your Lambda Function:**
+
+   - Click on the name of the Lambda function that you want to configure.
+
+4. **Configure Function Layers:**
+
+   - In the function’s configuration page, scroll down to the **Layers** section.
+   - Click on the **Add a layer** button.
+
+5. **Add the Layers:**
+
+   - **Choose from Layer Version ARN**:
+     - Select **Provide a layer version ARN** if you have the ARN (Amazon Resource Name) of the layer.
+     - Enter the ARN for the layer, which you can find on the Layers page or in the AWS CLI output from the layer creation.
+   - **Choose from AWS Layers**:
+     - Select **Custom layers** to see your uploaded layers.
+     - Choose the layer you want to add from the list and specify the version.
+   - Click **Add** to attach the layer to your function.
+
+6. **Repeat for Additional Layers:**
+
+   - Repeat the above steps to add more layers, such as the second library layer you’ve uploaded.
+
+7. **Save Changes:**
+
+   - After adding the necessary layers, make sure to save your changes by clicking **Deploy** or **Save** on the function’s configuration page.
+
+#### Using the AWS CLI
+
+1. **Get the Layer ARNs:**
+
+   - If you haven’t already, list your layers to get their ARNs:
+
+     ```bash
+     aws lambda list-layers
+     ```
+
+   - You can also get the version ARNs for a specific layer:
+
+     ```bash
+     aws lambda list-layer-versions --layer-name <layer-name>
+     ```
+
+2. **Update Your Lambda Function Configuration:**
+
+   - Use the `update-function-configuration` command to add layers to your Lambda function. Replace `<function-name>` with your Lambda function's name, and `<layer-arn-1>` and `<layer-arn-2>` with the ARNs of the layers:
+
+     ```bash
+     aws lambda update-function-configuration \
+       --function-name <function-name> \
+       --layers <layer-arn-1> <layer-arn-2>
+     ```
+
+### Verifying Layer Usage
+
+1. **Test Your Function:**
+
+   - After updating the function configuration, test your Lambda function to ensure that the layers are correctly included and the code executes as expected.
+
+2. **Check Logs:**
+
+   - Use AWS CloudWatch Logs to check for any errors or logs that indicate whether the layers are being used properly. 
+
+By following these steps, you will have successfully configured your Lambda function to use multiple layers, thereby bypassing the deployment package size limits and keeping your serverless applications modular and manageable.
