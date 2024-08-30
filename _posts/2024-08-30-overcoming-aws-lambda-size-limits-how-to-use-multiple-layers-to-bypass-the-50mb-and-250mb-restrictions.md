@@ -1,0 +1,155 @@
+---
+layout: default
+title: "Overcoming AWS Lambda Size Limits: How to Use Multiple Layers to Bypass the 50MB and 250MB Restrictions"
+date: 2024-08-30 14:15:00 +1000
+categories: [aws]
+tags: [aws, python]
+---
+
+## Overcoming AWS Lambda Size Limits: How to Use Multiple Layers to Bypass the 50MB and 250MB Restrictions
+
+AWS Lambda is a powerful service that allows you to run code in response to various triggers without managing servers. However, Lambda functions come with size restrictions that can sometimes be a challenge. Specifically, AWS Lambda imposes a limit of 50MB for the deployment package size when uploaded directly, and a 250MB limit for the uncompressed size of the deployment package. These limitations can be restrictive, especially when dealing with large libraries or multiple dependencies.
+
+In my [previous post](/github/aws/2024/08/28/choosing-the-right-approach-for-aws-lambda-deployment-packages-layers-or-containers.html), I discussed briefly the options for managing depenencies. In that post I discussed the limits imposed on AWS Lambda Layers, but did not discuss how these limits could be overcome. By utilising layers, you can effectively bypass the deployment package size limits by distributing your code and dependencies across multiple layers.
+
+In this blog post, we’ll explore how to overcome these size limitations by creating and managing Lambda Layers. We will walk through the process of packaging Python libraries into separate layers, uploading them to AWS Lambda, and then using these layers in your Lambda functions. By the end of this guide, you’ll be equipped with the knowledge to efficiently manage large dependencies and keep your Lambda functions within the size constraints, ensuring a more modular and maintainable serverless architecture.
+
+Let's dive into the step-by-step process of creating and uploading Lambda Layers for Python libraries, using both the AWS Management Console and the AWS CLI.
+
+Below is a comprehensive guide to creating AWS Lambda layers for `langchain_google_genai` and `langchain_community`, including instructions for both the AWS Management Console and AWS CLI. Combined, these two libraries exceed 250MB, but individually, both are small enough to keep within the lambda size limits.
+
+### Step 1: Install and Package the First Library (`langchain_google_genai`)
+
+1. **Create and Activate the Virtual Environment:**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. **Install the Library:**
+
+   ```bash
+   pip install langchain_google_genai
+   ```
+
+3. **Package the Library into a Zip File:**
+
+   - **Create the Correct Directory Structure:**
+
+     ```bash
+     mkdir -p lambda_layer/python/lib/python3.10/site-packages
+     cp -r .venv/lib/python3.10/site-packages/* lambda_layer/python/lib/python3.10/site-packages/
+     ```
+
+     Replace `python3.10` with your Python version (e.g., `python3.8`).
+
+   - **Create the Zip File:**
+
+     ```bash
+     cd lambda_layer
+     zip -r ../langchain_google_genai_layer.zip .
+     ```
+
+4. **Deactivate and Delete the Virtual Environment and temporary lambda_layer director:**
+
+   ```bash
+   cd ..
+   deactivate
+   rm -rf .venv
+   rm -rf lambda_layer
+   ```
+
+### Step 2: Upload the First Layer to AWS Lambda
+
+#### Using the AWS Management Console
+
+1. **Log in to the AWS Management Console.**
+2. **Navigate to the Lambda service.**
+3. **In the left sidebar, click on “Layers” under the “Additional Resources” section.**
+4. **Click “Create layer”.**
+5. **Provide a name (e.g., `langchain_google_genai_layer`).**
+6. **Upload the zip file (`langchain_google_genai_layer.zip`).**
+7. **Select the compatible runtimes (e.g., Python 3.8, Python 3.9).**
+8. **Click “Create” to finish creating the layer.**
+
+#### Using the AWS CLI
+
+1. **Upload the Layer:**
+
+   ```bash
+   aws lambda publish-layer-version \
+     --layer-name langchain_google_genai_layer \
+     --zip-file fileb://langchain_google_genai_layer.zip \
+     --compatible-runtimes python3.10
+   ```
+
+   Adjust the python version to match your needs.
+
+### Step 3: Install and Package the Second Library (`langchain_community`)
+
+1. **Recreate and Activate a New Virtual Environment:**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+2. **Install the Second Library:**
+
+   ```bash
+   pip install langchain_community
+   ```
+
+3. **Package the Library into a Zip File:**
+
+   - **Create the Correct Directory Structure:**
+
+     ```bash
+     mkdir -p lambda_layer/python/lib/python3.10/site-packages
+     cp -r .venv/lib/python3.10/site-packages/* lambda_layer/python/lib/python3.10/site-packages/
+     ```
+
+   - **Create the Zip File:**
+
+     ```bash
+     cd lambda_layer
+     zip -r ../langchain_community_layer.zip .
+     ```
+
+4. **Deactivate and Delete the Virtual Environment and temporary lambda_layer director:**
+
+   ```bash
+   cd..
+   deactivate
+   rm -rf .venv
+   rm -rf lambda_layer
+   ```
+
+### Step 4: Upload the Second Layer to AWS Lambda
+
+#### Using the AWS Management Console
+
+1. **Log in to the AWS Management Console.**
+2. **Navigate to the Lambda service.**
+3. **In the left sidebar, click on “Layers” under the “Additional Resources” section.**
+4. **Click “Create layer”.**
+5. **Provide a name (e.g., `langchain_community_layer`).**
+6. **Upload the zip file (`langchain_community_layer.zip`).**
+7. **Select the compatible runtimes (e.g., Python 3.8, Python 3.9).**
+8. **Click “Create” to finish creating the layer.**
+
+#### Using the AWS CLI
+
+1. **Upload the Layer:**
+
+   ```bash
+   aws lambda publish-layer-version \
+     --layer-name langchain_community_layer \
+     --zip-file fileb://langchain_community_layer.zip \
+     --compatible-runtimes python3.10
+   ```
+
+   Adjust the python version to match your needs.
+
+You can use the same steps above to create multiple lambd layers of your choosing. In my case, I use three layers, one each for  `langchain_google_genai` and `langchain_community`, plus another layer for other (smaller) libraries.
