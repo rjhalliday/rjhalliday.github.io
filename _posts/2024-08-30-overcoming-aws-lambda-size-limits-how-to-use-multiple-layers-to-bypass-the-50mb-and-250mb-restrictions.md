@@ -8,11 +8,9 @@ tags: [aws, python]
 
 ## Overcoming AWS Lambda Size Limits: How to Use Multiple Layers to Bypass the 50MB and 250MB Restrictions
 
-AWS Lambda is a powerful service that allows you to run code in response to various triggers without managing servers. However, Lambda functions come with size restrictions that can sometimes be a challenge. Specifically, AWS Lambda imposes a limit of 50MB for the deployment package size when uploaded directly, and a 250MB limit for the uncompressed size of the deployment package. These limitations can be restrictive, especially when dealing with large libraries or multiple dependencies.
+In my [previous post](/github/aws/2024/08/28/choosing-the-right-approach-for-aws-lambda-deployment-packages-layers-or-containers.html), I discussed briefly the options for managing depenencies. In this blog post, we’ll explore how to create and managing Lambda Layers. We will walk through the process of packaging Python libraries into separate layers, uploading them to AWS Lambda, and then using these layers in your Lambda functions. By the end of this guide, you’ll be equipped with the knowledge to efficiently manage large dependencies, ensuring a more modular and maintainable serverless architecture.
 
-In my [previous post](/github/aws/2024/08/28/choosing-the-right-approach-for-aws-lambda-deployment-packages-layers-or-containers.html), I discussed briefly the options for managing depenencies. In that post I discussed the limits imposed on AWS Lambda Layers, but did not discuss how these limits could be overcome. By utilising layers, you can effectively bypass the deployment package size limits by distributing your code and dependencies across multiple layers.
-
-In this blog post, we’ll explore how to overcome these size limitations by creating and managing Lambda Layers. We will walk through the process of packaging Python libraries into separate layers, uploading them to AWS Lambda, and then using these layers in your Lambda functions. By the end of this guide, you’ll be equipped with the knowledge to efficiently manage large dependencies and keep your Lambda functions within the size constraints, ensuring a more modular and maintainable serverless architecture.
+Note that the overall limit of the layers for a lambda function is still 250MB, so this means the use of multiple layers cannot be used to overcome the 50MB ZIP (250MB uncompressed) lambda size limit.
 
 Let's dive into the step-by-step process of creating and uploading Lambda Layers for Python libraries, using both the AWS Management Console and the AWS CLI.
 
@@ -231,4 +229,4 @@ Once you've created and uploaded your Lambda layers, you need to configure your 
 
    - Use AWS CloudWatch Logs to check for any errors or logs that indicate whether the layers are being used properly. 
 
-By following these steps, you will have successfully configured your Lambda function to use multiple layers, thereby bypassing the deployment package size limits and keeping your serverless applications modular and manageable.
+By following these steps, you will have successfully configured your Lambda function to use multiple layers. Remember, this isn't a workaround for the 250MB size limit, so if your lambda function requires a lot of dependencies, you will need to use docer images instead.
