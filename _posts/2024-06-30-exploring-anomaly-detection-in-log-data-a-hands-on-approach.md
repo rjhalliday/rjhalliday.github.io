@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Exploring Anomaly Detection in Log Data: A Hands-On Approach"
-date: 2024-08-31 12:00:00 +1000
+date: 2024-06-30 12:00:00 +1000
 categories: [machine-learning]
 tags: [machine-learning, isolation-forest, anomaly-detection, python]
 ---
