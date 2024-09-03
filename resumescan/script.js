@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Send the data to the AWS Lambda function
-            const response = await fetch('https://b3iitvjuq6e4zexxpheyf6w4ym0bdtma.lambda-url.us-east-1.on.aws/', {
+            const response = await fetch('https://nju22qnpxtmdbowim6nbsocb2e0burhh.lambda-url.us-east-1.on.aws/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
