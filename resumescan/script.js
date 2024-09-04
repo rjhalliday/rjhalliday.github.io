@@ -29,21 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get the result from the response
             const result = await response.json();
 
-            // Extract and display the result and summary
-            const resultText = result.result; // the result string
-            const summaryMatch = resultText.match(/"Summary":\s*"([^"]*)"/);
-            const summary = summaryMatch ? summaryMatch[1] : 'No summary found';
+            // Parse the result field which is a JSON string
+            const resultData = JSON.parse(result.result);
 
-            // Display the summary
-            resultDiv.innerHTML = `
-                <h2>Result:</h2>
-                <pre>${resultText}</pre>
-                <h2>Summary:</h2>
-                <p>${summary}</p>
-            `;
+            // Generate HTML table for Keywords and Present
+            let tableHTML = '<h2>Result:</h2>';
+            tableHTML += '<table border="1"><thead><tr><th>Keyword</th><th>Present</th></tr></thead><tbody>';
 
-            // Display the result
-            //resultDiv.innerHTML = `<h2>Result:</h2><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            resultData.Keywords.forEach(keyword => {
+                tableHTML += `<tr><td>${keyword.Keyword}</td><td>${keyword.Present}</td></tr>`;
+            });
+
+            tableHTML += '</tbody></table>';
+
+            // Display the table and summary
+            resultDiv.innerHTML = tableHTML + `<h2>Summary:</h2><p>${resultData.Summary}</p>`;
         } catch (error) {
             resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
         }
