@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('job-resume-form');
     const resultDiv = document.getElementById('result');
-    
+    const loadingDiv = document.getElementById('loading');
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
+
+        // Show the loading spinner
+        loadingDiv.style.display = 'block';
+        resultDiv.innerHTML = '';
 
         // Get the values from the form
         const job_description = document.getElementById('job-description').value;
@@ -49,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Generate HTML table for Keywords and Present
             let tableHTML = '<h2>Result:</h2>';
-            tableHTML += '<table border="1"><thead><tr><th>Keyword</th><th>Present</th></tr></thead><tbody>';
+            tableHTML += '<table><thead><tr><th>Keyword</th><th>Present</th></tr></thead><tbody>';
 
             resultData.Keywords.forEach(keyword => {
                 tableHTML += `<tr><td>${keyword.Keyword}</td><td>${keyword.Present}</td></tr>`;
@@ -61,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
             resultDiv.innerHTML = tableHTML + `<h2>Summary:</h2><p>${resultData.Summary}</p>`;
         } catch (error) {
             resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        } finally {
+            // Hide the loading spinner
+            loadingDiv.style.display = 'none';
         }
     });
 });
