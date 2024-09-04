@@ -29,8 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get the result from the response
             const result = await response.json();
 
+            // Extract and display the result and summary
+            const resultText = result.result; // the result string
+            const summaryMatch = resultText.match(/"Summary":\s*"([^"]*)"/);
+            const summary = summaryMatch ? summaryMatch[1] : 'No summary found';
+
+            // Display the summary
+            resultDiv.innerHTML = `
+                <h2>Result:</h2>
+                <pre>${resultText}</pre>
+                <h2>Summary:</h2>
+                <p>${summary}</p>
+            `;
+
             // Display the result
-            resultDiv.innerHTML = `<h2>Result:</h2><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            //resultDiv.innerHTML = `<h2>Result:</h2><pre>${JSON.stringify(result, null, 2)}</pre>`;
         } catch (error) {
             resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
         }
