@@ -12,10 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const isJobFileSelected = jobDescriptionFile.files.length > 0;
         const isResumeFileSelected = resumeFile.files.length > 0;
 
+        // Disable text areas if a file is selected
         jobDescriptionText.disabled = isJobFileSelected;
         resumeText.disabled = isResumeFileSelected;
+
+        // Clear text areas if a file is selected
+        if (isJobFileSelected) jobDescriptionText.value = '';
+        if (isResumeFileSelected) resumeText.value = '';
     }
 
+    // Attach change event listeners to file inputs
     jobDescriptionFile.addEventListener('change', toggleInputs);
     resumeFile.addEventListener('change', toggleInputs);
 
