@@ -77,8 +77,15 @@ button:disabled {
 /* Loading spinner styles */
 .loading {
     display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     text-align: center;
-    margin-top: 20px;
+    z-index: 1000; /* Ensure it appears above other content */
+    padding-top: 20%; /* Adjust as needed to center vertically */
 }
 
 .spinner {
@@ -88,7 +95,7 @@ button:disabled {
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
-    margin: 0 auto; /* Center the spinner */
+    display: inline-block; /* Center the spinner */
 }
 
 @keyframes spin {
