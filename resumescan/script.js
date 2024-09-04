@@ -34,9 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Clean and parse the result field
             let cleanedResultString = result.result;
             
-            // Remove the Markdown code block indicators and extra newlines
-            cleanedResultString = cleanedResultString.replace(/^```json\n|\n```$/g, '').trim();
-            
+            // Remove Markdown code block indicators and extra whitespace
+            cleanedResultString = cleanedResultString
+                .replace(/^```json\n/, '')  // Remove opening ```json\n
+                .replace(/\n```$/, '')      // Remove closing \n```
+                .trim();                    // Trim any extra whitespace
+
+            // Log cleaned JSON string
+            console.log('Cleaned JSON String:', cleanedResultString);
+
             // Parse the cleaned JSON string
             const resultData = JSON.parse(cleanedResultString);
 
