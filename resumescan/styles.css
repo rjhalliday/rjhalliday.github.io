@@ -1,91 +1,49 @@
-/* Existing styles */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
+/* Basic styles for the form and buttons */
 .container {
-    width: 80%;
     max-width: 800px;
-    background: white;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-height: 80vh;  /* Adjust this value as needed */
-    overflow-y: auto;  /* Enable vertical scrolling */
 }
 
-h1 {
-    margin-top: 0;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+.form-section {
+    margin-bottom: 20px;
 }
 
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 10px 15px;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-.result {
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.form-actions {
     margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background: #f9f9f9;
-}
-
-/* New styles for the table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-/* New styles for the loading spinner */
-.loading {
-    font-size: 18px;
-    color: #333;
-    margin-top: 20px;
-    text-align: center;
+    text-align: right;
 }
