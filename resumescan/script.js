@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show the loading spinner
         loadingDiv.style.display = 'block';
-        loadingDiv.innerHTML = '<div class="spinner"></div>';  // Spinner animation
         resultDiv.innerHTML = '';
 
         // Get the text and file inputs
