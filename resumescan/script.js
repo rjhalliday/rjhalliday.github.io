@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cleanedResultString = cleanedResultString
                 .replace(/^```json\n/, '')  // Remove opening ```json\n
                 .replace(/\n```$/, '')      // Remove closing \n```
+                .replace(/```/g, '')        // remove globally all ```
                 .trim();                    // Trim any extra whitespace
 
             // Log cleaned JSON string
