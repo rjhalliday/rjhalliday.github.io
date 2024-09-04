@@ -6,10 +6,16 @@
     <title>Job Description and Resume</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 <body>
     <div class="container">
         <h1>Submit Job Description and Resume</h1>
+        <p>Please provide the job description and resume. You can either:
+            <ul>
+                <li>Paste the text directly into the text areas, or</li>
+                <li>Select a PDF file to upload.</li>
+            </ul>
+            <strong>Note:</strong> If you choose to upload a PDF, the text areas will be disabled.
+        </p>
         <form id="job-resume-form">
             <!-- Job Description Inputs -->
             <label for="job-description-text">Job Description:</label>
@@ -27,6 +33,7 @@
         <div id="result" class="result"></div>
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
