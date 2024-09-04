@@ -6,15 +6,20 @@
     <title>Job Description and Resume</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 <body>
     <div class="container">
         <h1>Submit Job Description and Resume</h1>
         <form id="job-resume-form">
-            <label for="job-description">Job Description:</label>
-            <textarea id="job-description" rows="10" placeholder="Paste job description here..." required></textarea>
+            <!-- Job Description Inputs -->
+            <label for="job-description-text">Job Description:</label>
+            <textarea id="job-description-text" rows="10" placeholder="Paste job description here..."></textarea>
+            <input type="file" id="job-description-file" accept=".pdf" />
             
-            <label for="resume">Resume:</label>
-            <textarea id="resume" rows="10" placeholder="Paste resume here..." required></textarea>
+            <!-- Resume Inputs -->
+            <label for="resume-text">Resume:</label>
+            <textarea id="resume-text" rows="10" placeholder="Paste resume here..."></textarea>
+            <input type="file" id="resume-file" accept=".pdf" />
             
             <button type="submit">Submit</button>
         </form>
