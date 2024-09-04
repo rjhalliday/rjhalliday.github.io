@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Log the result to inspect its structure
             console.log('Full result:', result);
 
-            // Check if result.result is already an object
-            let resultData;
-            try {
-                // Attempt to parse the result if it's a string
-                resultData = typeof result.result === 'string' ? JSON.parse(result.result) : result.result;
-            } catch (parseError) {
-                throw new Error(`Error parsing JSON: ${parseError.message}`);
-            }
+            // Clean and parse the result field
+            let cleanedResultString = result.result;
+            
+            // Remove the Markdown code block indicators and extra newlines
+            cleanedResultString = cleanedResultString.replace(/^```json\n|\n```$/g, '').trim();
+            
+            // Parse the cleaned JSON string
+            const resultData = JSON.parse(cleanedResultString);
 
             // Generate HTML table for Keywords and Present
             let tableHTML = '<h2>Result:</h2>';
