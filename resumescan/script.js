@@ -10,9 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingDiv.style.display = 'block';
         resultDiv.innerHTML = '';
 
-        // Get the values from the form
-        const job_description = document.getElementById('job-description').value;
-        const resume = document.getElementById('resume').value;
+        // Get the text and file inputs
+        const jobDescriptionText = document.getElementById('job-description-text').value;
+        const resumeText = document.getElementById('resume-text').value;
+        const jobDescriptionFile = document.getElementById('job-description-file').files[0];
+        const resumeFile = document.getElementById('resume-file').files[0];
+
+        // Function to read PDF files and extract text
+        async function extractTextFromPDF(file) {
+            const pdf = await pdfjsLib.getDocument(URL.createObjectURL(file)).promise;
+            let text = '';
+            for (let i = 0; i < pdf.numPages; i++) {
+                const page = await pdf.getPage(i + 1);
+                const textContent = await page.getTextContent();
+                text += textContent.items.map(item => item.str).join(' ');
+            }
+            return text;
+        }
+
+        // Extract text from PDF files if provided
+        const jobDescription = jobDescriptionFile ? await extractTextFromPDF(jobDescriptionFile) : jobDescriptionText;
+        const resume = resumeFile ? await extractTextFromPDF(resumeFile) : resumeText;
 
         try {
             // Send the data to the AWS Lambda function
@@ -22,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    job_description: job_description,
+                    job_description: jobDescription,
                     resume: resume
                 })
             });
