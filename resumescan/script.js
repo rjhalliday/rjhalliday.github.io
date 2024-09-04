@@ -6,13 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const resumeText = document.getElementById('resume-text');
     const jobDescriptionFile = document.getElementById('job-description-file');
     const resumeFile = document.getElementById('resume-file');
+    const clearJobFileButton = document.getElementById('clear-job-file');
+    const clearResumeFileButton = document.getElementById('clear-resume-file');
 
     // Function to toggle input fields based on file selection
     function toggleInputs() {
         const isJobFileSelected = jobDescriptionFile.files.length > 0;
         const isResumeFileSelected = resumeFile.files.length > 0;
 
-        // Disable text areas if a file is selected
+        // Disable or enable text areas based on file selection
         jobDescriptionText.disabled = isJobFileSelected;
         resumeText.disabled = isResumeFileSelected;
 
@@ -24,6 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach change event listeners to file inputs
     jobDescriptionFile.addEventListener('change', toggleInputs);
     resumeFile.addEventListener('change', toggleInputs);
+
+    // Attach event listeners to clear file buttons
+    clearJobFileButton.addEventListener('click', () => {
+        jobDescriptionFile.value = ''; // Clear the file input
+        toggleInputs(); // Re-enable the text area
+    });
+
+    clearResumeFileButton.addEventListener('click', () => {
+        resumeFile.value = ''; // Clear the file input
+        toggleInputs(); // Re-enable the text area
+    });
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
