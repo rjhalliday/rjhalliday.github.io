@@ -10,6 +10,7 @@ A blog covering AI ML/LLM, Python, Cloud, HFC, RF, and more.
 ## Tools 
 
 [DOCSIS Chatbot](/docsis.html)
+[Resume Scan](/resumescan/index.html)
 
 ## Latest Posts
 
