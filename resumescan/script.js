@@ -25,12 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Network response was not ok.');
             }
-
             // Get the result from the response
             const result = await response.json();
 
-            // Parse the result field which is a JSON string
-            const resultData = JSON.parse(result.result);
+            // Log the result to inspect its structure
+            console.log('Full result:', result);
+
+            // Check if result.result is already an object
+            let resultData;
+            try {
+                // Attempt to parse the result if it's a string
+                resultData = typeof result.result === 'string' ? JSON.parse(result.result) : result.result;
+            } catch (parseError) {
+                throw new Error(`Error parsing JSON: ${parseError.message}`);
+            }
 
             // Generate HTML table for Keywords and Present
             let tableHTML = '<h2>Result:</h2>';
