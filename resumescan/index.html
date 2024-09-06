@@ -5,55 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Description and Resume</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Add Google Ads script here -->
+    <!-- Add Google AdSense script here -->
 </head>
 <body>
+    <header>
+        <h1>Job Scanner</h1>
+        <p>
+            Please either paste your Job Description and Resume below or upload them. The Resume Scanner will analyze the Job Description to extract keywords and indicate if those keywords are present in your Resume.
+        </p>
+    </header>
+
     <div class="ads-container">
         <div class="ad-sidebar" id="ad-sidebar-left">
             <!-- Google AdSense code for left sidebar -->
         </div>
-    </div>
+        <div class="main-container">
+            <div class="container">
+                <form id="job-resume-form">
+                    <!-- Job Description Inputs -->
+                    <div class="form-section">
+                        <label for="job-description-text">Job Description:</label>
+                        <textarea id="job-description-text" rows="10" placeholder="Paste job description here..."></textarea>
+                        <input type="file" id="job-description-file" accept=".pdf" />
+                        <button type="button" id="clear-job-file">Clear Job File</button>
+                    </div>
 
-    <div class="main-container">
-        <header>
-            <h1>Job Scanner</h1>
-            <p>
-                Please either paste your Job Description and Resume below or upload them. The Resume Scanner will analyze the Job Description to extract keywords and indicate if those keywords are present in your Resume.
-            </p>
-        </header>
+                    <!-- Resume Inputs -->
+                    <div class="form-section">
+                        <label for="resume-text">Resume:</label>
+                        <textarea id="resume-text" rows="10" placeholder="Paste resume here..."></textarea>
+                        <input type="file" id="resume-file" accept=".pdf" />
+                        <button type="button" id="clear-resume-file">Clear Resume File</button>
+                    </div>
 
-        <div class="container">
-            <form id="job-resume-form">
-                <!-- Job Description Inputs -->
-                <div class="form-section">
-                    <label for="job-description-text">Job Description:</label>
-                    <textarea id="job-description-text" rows="10" placeholder="Paste job description here..."></textarea>
-                    <input type="file" id="job-description-file" accept=".pdf" />
-                    <button type="button" id="clear-job-file">Clear Job File</button>
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
                 </div>
-
-                <!-- Resume Inputs -->
-                <div class="form-section">
-                    <label for="resume-text">Resume:</label>
-                    <textarea id="resume-text" rows="10" placeholder="Paste resume here..."></textarea>
-                    <input type="file" id="resume-file" accept=".pdf" />
-                    <button type="button" id="clear-resume-file">Clear Resume File</button>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="form-actions">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-
-            <div id="loading" class="loading">
-                <div class="spinner"></div>
+                <div id="result" class="result"></div>
             </div>
-            <div id="result" class="result"></div>
         </div>
-    </div>
-
-    <div class="ads-container">
         <div class="ad-sidebar" id="ad-sidebar-right">
             <!-- Google AdSense code for right sidebar -->
         </div>
