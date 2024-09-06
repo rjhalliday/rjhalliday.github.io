@@ -39,6 +39,7 @@ header p {
 }
 
 .main-container {
+    flex: 1;
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -181,5 +182,14 @@ table tr:hover {
     button {
         font-size: 14px;
         padding: 8px 12px;
+    }
+
+    .ads-container {
+        flex-direction: column;
+    }
+
+    .ad-sidebar {
+        max-width: none;
+        margin-bottom: 20px;
     }
 }
