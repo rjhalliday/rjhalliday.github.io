@@ -99,8 +99,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Display the table and summary
             resultDiv.innerHTML = tableHTML + `<h2>Summary:</h2><p>${resultData.Summary}</p>`;
+
+            // Show the result div
+            resultDiv.style.display = 'block';
         } catch (error) {
             resultDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            resultDiv.style.display = 'block'; // Ensure the result div is visible in case of error
         } finally {
             // Hide the loading spinner
             loadingDiv.style.display = 'none';
@@ -118,4 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return text;
     }
+
+    // Add a clear button to the result div
+    const clearButton = document.createElement('button');
+    clearButton.textContent = 'Clear';
+    clearButton.className = 'clear-button';
+    clearButton.addEventListener('click', () => {
+        resultDiv.style.display = 'none'; // Hide the result div
+        resultDiv.innerHTML = ''; // Clear the result div content
+    });
+    resultDiv.appendChild(clearButton);
 });
