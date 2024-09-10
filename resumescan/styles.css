@@ -32,6 +32,8 @@ header p {
     display: flex;
     flex-direction: row; /* Default to horizontal layout */
     margin: 20px 0;
+    flex: 1;
+    height: 100%; /* Ensure the container takes full height */
 }
 
 .ad-sidebar {
@@ -42,6 +44,8 @@ header p {
     padding: 10px;
     /* Hide on mobile */
     display: block;
+    flex: 1; /* Allow sidebar to grow and fill available height */
+    height: 100%; /* Full height of parent container */
 }
 
 /* Main container */
@@ -49,8 +53,10 @@ header p {
     flex: 1; /* Allow main-container to grow and fill available space */
     display: flex;
     justify-content: center;
+    align-items: flex-start; /* Align items to the top */
     padding: 20px;
     flex-direction: column;
+    height: 100%; /* Ensure it takes full height of the parent */
 }
 
 /* Container for content */
@@ -61,6 +67,7 @@ header p {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Form and buttons styles */
