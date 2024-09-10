@@ -1,9 +1,13 @@
 /* Global styles */
 body {
+    font-size: 16px;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
 }
 
 header {
@@ -26,7 +30,7 @@ header p {
 /* Ad placement styles */
 .ads-container {
     display: flex;
-    justify-content: space-between;
+    flex: 1; /* Allow main-container to grow, making the ad sidebars full height */
     margin: 20px 0;
 }
 
@@ -36,10 +40,11 @@ header p {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 .main-container {
-    flex: 1;
+    flex: 1; /* Allow main-container to grow and fill available space */
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -171,12 +176,17 @@ table tr:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+    .form-section {
+        margin-bottom: 15px;
+    }
+    
     .container {
         padding: 10px;
     }
 
     textarea {
         font-size: 14px;
+        padding: 8px;
     }
 
     button {
@@ -194,23 +204,7 @@ table tr:hover {
     }
 }
 
-/* Styles for the clear results button */
-#clear-results-button {
-    background-color: #dc3545; /* Red */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-#clear-results-button:hover {
-    background-color: #c82333;
-}
-
-#result-container {
-    margin-top: 20px;
+img, video {
+    max-width: 100%;
+    height: auto;
 }
