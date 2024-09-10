@@ -24,76 +24,47 @@ header p {
     line-height: 1.6;
 }
 
-.ad-sidebar {
-    width: 100%;
-    max-width: 300px;
+/* Main content and layout */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-direction: column;
+    min-height: 80vh; /* Ensure the content area is large enough */
+}
+
+/* Hide form container when results are visible */
+.form-container.hidden {
+    display: none;
+}
+
+/* Result container styles */
+.result {
+    display: none; /* Initially hidden */
+    flex: 1;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow-y: auto;
 }
 
-.form-section {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: block;
-}
-
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-
-input[type="file"] {
-    margin-top: 10px;
-}
-
-button {
-    background-color: #0044cc;
+/* Clear results button styles */
+.clear-results-button {
+    background-color: #ff4d4d;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px;
     font-size: 16px;
-    margin-right: 10px;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #003bb5;
-}
-
-button:disabled {
-    background-color: #d0d0d0;
-    cursor: not-allowed;
-}
-
-.form-actions {
-    margin-top: 20px;
-    text-align: right;
+.clear-results-button:hover {
+    background-color: #e60000;
 }
 
 /* Loading spinner styles */
@@ -138,82 +109,4 @@ button:disabled {
     .form-container {
         padding: 15px;
     }
-}
-
-/* Result container styles */
-.result {
-    display: none; /* Initially hidden */
-    flex: 1;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    overflow-y: auto;
-}
-
-/* Clear results button styles */
-.clear-results-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.clear-results-button:hover {
-    background-color: #e60000;
-}
-
-
-
-
-
-
-
-/* Global container to control layout */
-.content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    flex-direction: column;
-    min-height: 80vh; /* Ensure the content area is large enough */
-}
-
-/* Hide form container when results are visible */
-.form-container.hidden {
-    display: none;
-}
-
-/* Result container styles */
-.result {
-    display: none; /* Initially hidden */
-    flex: 1;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    overflow-y: auto;
-}
-
-/* Clear results button styles */
-.clear-results-button {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.clear-results-button:hover {
-    background-color: #e60000;
 }
