@@ -1,13 +1,13 @@
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #0044cc;
     color: white;
     padding: 20px;
     text-align: center;
@@ -15,97 +15,86 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 2.5em;
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* Ad placement styles */
-.ads-container {
+/* Main content and layout */
+.content {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    padding: 20px;
 }
 
 .ad-sidebar {
     width: 100%;
     max-width: 300px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.main-container {
+.form-container {
     flex: 1;
     display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-section {
+    width: 100%;
     margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
 }
 
 textarea {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     box-sizing: border-box;
+    resize: vertical;
 }
 
 input[type="file"] {
-    display: block;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #0044cc;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     margin-right: 10px;
-    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #003bb5;
 }
 
 button:disabled {
-    background-color: #ccc;
+    background-color: #d0d0d0;
     cursor: not-allowed;
 }
 
@@ -116,26 +105,25 @@ button:disabled {
 
 /* Loading spinner styles */
 .loading {
-    display: none; /* Initially hidden */
-    position: fixed; /* Fixed position */
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    z-index: 1000; /* Ensure it appears above other content */
-    padding-top: 20%; /* Adjust as needed to center vertically */
+    z-index: 1000;
+    padding-top: 20%;
 }
 
 .spinner {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     animation: spin 1s linear infinite;
-    display: inline-block; /* Center the spinner */
 }
 
 @keyframes spin {
@@ -143,53 +131,18 @@ button:disabled {
     100% { transform: rotate(360deg); }
 }
 
-/* Table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tr:hover {
-    background-color: #f1f1f1;
-}
-
 /* Responsive adjustments */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    textarea {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    .ads-container {
+@media (max-width: 768px) {
+    .content {
         flex-direction: column;
     }
 
     .ad-sidebar {
         max-width: none;
         margin-bottom: 20px;
+    }
+
+    .form-container {
+        padding: 15px;
     }
 }
