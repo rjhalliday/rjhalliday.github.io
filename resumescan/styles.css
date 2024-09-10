@@ -1,13 +1,13 @@
 /* Global styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #0044cc;
+    background-color: #007bff;
     color: white;
     padding: 20px;
     text-align: center;
@@ -15,79 +15,127 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* Main content and layout */
-.content {
+/* Ad placement styles */
+.ads-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    flex-direction: column;
-    min-height: 80vh; /* Ensure the content area is large enough */
+    margin: 20px 0;
 }
 
-/* Hide form container when results are visible */
-.form-container.hidden {
-    display: none;
+.ad-sidebar {
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 
-/* Result container styles */
-.result {
-    display: none; /* Initially hidden */
+.main-container {
     flex: 1;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    overflow-y: auto;
 }
 
-/* Clear results button styles */
-.clear-results-button {
-    background-color: #ff4d4d;
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    display: inline-block;
 }
 
-.clear-results-button:hover {
-    background-color: #e60000;
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
 }
 
 /* Loading spinner styles */
 .loading {
-    display: none;
-    position: fixed;
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     text-align: center;
-    z-index: 1000;
-    padding-top: 20%;
+    z-index: 1000; /* Ensure it appears above other content */
+    padding-top: 20%; /* Adjust as needed to center vertically */
 }
 
 .spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     animation: spin 1s linear infinite;
+    display: inline-block; /* Center the spinner */
 }
 
 @keyframes spin {
@@ -95,18 +143,53 @@ header p {
     100% { transform: rotate(360deg); }
 }
 
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .content {
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .ads-container {
         flex-direction: column;
     }
 
     .ad-sidebar {
         max-width: none;
         margin-bottom: 20px;
-    }
-
-    .form-container {
-        padding: 15px;
     }
 }
