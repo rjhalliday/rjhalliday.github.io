@@ -11,49 +11,48 @@
     <header>
         <h1>Job Scanner</h1>
         <p>
-            Paste your Job Description and Resume below or upload them. The Resume Scanner will analyze the Job Description to extract keywords and indicate if those keywords are present in your Resume.
+            Please either paste your Job Description and Resume below or upload them. The Resume Scanner will analyze the Job Description to extract keywords and indicate if those keywords are present in your Resume.
         </p>
     </header>
 
-    <main class="content">
-        <aside class="ad-sidebar" id="ad-sidebar-left">
+    <div class="ads-container">
+        <div class="ad-sidebar" id="ad-sidebar-left">
             <!-- Google AdSense code for left sidebar -->
-        </aside>
+        </div>
+        <div class="main-container">
+            <div class="container">
+                <form id="job-resume-form">
+                    <!-- Job Description Inputs -->
+                    <div class="form-section">
+                        <label for="job-description-text">Job Description:</label>
+                        <textarea id="job-description-text" rows="10" placeholder="Paste job description here..."></textarea>
+                        <input type="file" id="job-description-file" accept=".pdf" />
+                        <button type="button" id="clear-job-file">Clear Job File</button>
+                    </div>
 
-        <section class="form-container">
-            <form id="job-resume-form">
-                <div class="form-section">
-                    <label for="job-description-text">Job Description:</label>
-                    <textarea id="job-description-text" rows="10" placeholder="Paste job description here..."></textarea>
-                    <input type="file" id="job-description-file" accept=".pdf" />
-                    <button type="button" id="clear-job-file">Clear Job File</button>
+                    <!-- Resume Inputs -->
+                    <div class="form-section">
+                        <label for="resume-text">Resume:</label>
+                        <textarea id="resume-text" rows="10" placeholder="Paste resume here..."></textarea>
+                        <input type="file" id="resume-file" accept=".pdf" />
+                        <button type="button" id="clear-resume-file">Clear Resume File</button>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
                 </div>
-
-                <div class="form-section">
-                    <label for="resume-text">Resume:</label>
-                    <textarea id="resume-text" rows="10" placeholder="Paste resume here..."></textarea>
-                    <input type="file" id="resume-file" accept=".pdf" />
-                    <button type="button" id="clear-resume-file">Clear Resume File</button>
-                </div>
-
-                <div class="form-actions">
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </section>
-
-        <section id="result" class="result">
-            <button class="clear-results-button" id="clear-results-button">Clear Results</button>
-            <!-- Results will be injected here -->
-        </section>
-
-        <aside class="ad-sidebar" id="ad-sidebar-right">
+                <div id="result" class="result"></div>
+            </div>
+        </div>
+        <div class="ad-sidebar" id="ad-sidebar-right">
             <!-- Google AdSense code for right sidebar -->
-        </aside>
-    </main>
-
-    <div id="loading" class="loading">
-        <div class="spinner"></div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
