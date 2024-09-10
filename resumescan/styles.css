@@ -193,3 +193,24 @@ table tr:hover {
         margin-bottom: 20px;
     }
 }
+
+/* Styles for the clear results button */
+#clear-results-button {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#clear-results-button:hover {
+    background-color: #c82333;
+}
+
+#result-container {
+    margin-top: 20px;
+}
