@@ -117,9 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return text;
     }
 
-    // Clear results button event listener
+    // Clear results and show form container
     clearResultsButton.addEventListener('click', () => {
-        resultDiv.innerHTML = ''; // Clear the result content
         resultDiv.style.display = 'none'; // Hide the result div
         formContainer.classList.remove('hidden'); // Show form container
     });
