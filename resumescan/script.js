@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('job-resume-form');
     const resultDiv = document.getElementById('result');
     const loadingDiv = document.getElementById('loading');
+    const formContainer = document.querySelector('.form-container');
     const jobDescriptionText = document.getElementById('job-description-text');
     const resumeText = document.getElementById('resume-text');
     const jobDescriptionFile = document.getElementById('job-description-file');
@@ -42,10 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        // Show the loading spinner
+        // Show the loading spinner and result div
         loadingDiv.style.display = 'block';
-        resultDiv.style.display = 'block'; // Show result div
-        resultDiv.innerHTML = '';
+        resultDiv.style.display = 'block'; // Ensure result div is shown
+        formContainer.classList.add('hidden'); // Hide form container
+        resultDiv.innerHTML = ''; // Clear existing results
 
         // Get the text and file inputs
         const jobDescription = jobDescriptionFile.files.length > 0 ? await extractTextFromPDF(jobDescriptionFile.files[0]) : jobDescriptionText.value;
@@ -70,9 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get the result from the response
             const result = await response.json();
 
-            // Log the result to inspect its structure
-            console.log('Full result:', result);
-
             // Clean and parse the result field
             let cleanedResultString = result.result;
             
@@ -82,9 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 .replace(/\n```$/, '')      // Remove closing \n```
                 .replace(/```/g, '')        // remove globally all ```
                 .trim();                    // Trim any extra whitespace
-
-            // Log cleaned JSON string
-            console.log('Cleaned JSON String:', cleanedResultString);
 
             // Parse the cleaned JSON string
             const resultData = JSON.parse(cleanedResultString);
@@ -125,5 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     clearResultsButton.addEventListener('click', () => {
         resultDiv.innerHTML = ''; // Clear the result content
         resultDiv.style.display = 'none'; // Hide the result div
+        formContainer.classList.remove('hidden'); // Show form container
     });
 });
