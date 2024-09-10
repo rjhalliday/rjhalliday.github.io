@@ -24,13 +24,6 @@ header p {
     line-height: 1.6;
 }
 
-/* Main content and layout */
-.content {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
 .ad-sidebar {
     width: 100%;
     max-width: 300px;
@@ -145,6 +138,55 @@ button:disabled {
     .form-container {
         padding: 15px;
     }
+}
+
+/* Result container styles */
+.result {
+    display: none; /* Initially hidden */
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow-y: auto;
+}
+
+/* Clear results button styles */
+.clear-results-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-results-button:hover {
+    background-color: #e60000;
+}
+
+
+
+
+
+
+
+/* Global container to control layout */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-direction: column;
+    min-height: 80vh; /* Ensure the content area is large enough */
+}
+
+/* Hide form container when results are visible */
+.form-container.hidden {
+    display: none;
 }
 
 /* Result container styles */
