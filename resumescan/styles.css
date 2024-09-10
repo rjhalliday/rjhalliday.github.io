@@ -1,6 +1,5 @@
 /* Global styles */
 body {
-    font-size: 16px;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,6 +9,7 @@ body {
     min-height: 100vh; /* Ensure body takes full viewport height */
 }
 
+/* Header styles */
 header {
     background-color: #007bff;
     color: white;
@@ -30,7 +30,7 @@ header p {
 /* Ad placement styles */
 .ads-container {
     display: flex;
-    flex: 1; /* Allow main-container to grow, making the ad sidebars full height */
+    flex-direction: row; /* Default to horizontal layout */
     margin: 20px 0;
 }
 
@@ -40,16 +40,20 @@ header p {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
-    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    /* Hide on mobile */
+    display: block;
 }
 
+/* Main container */
 .main-container {
     flex: 1; /* Allow main-container to grow and fill available space */
     display: flex;
     justify-content: center;
     padding: 20px;
+    flex-direction: column;
 }
 
+/* Container for content */
 .container {
     max-width: 800px;
     width: 100%;
@@ -59,16 +63,7 @@ header p {
     border-radius: 8px;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
+/* Form and buttons styles */
 form {
     display: flex;
     flex-direction: column;
@@ -174,14 +169,24 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for mobile screens */
 @media (max-width: 600px) {
-    .form-section {
-        margin-bottom: 15px;
+    .ads-container {
+        flex-direction: column; /* Stack ads vertically if necessary */
+        margin: 0; /* Remove margin */
     }
-    
+
+    .ad-sidebar {
+        display: none; /* Hide sidebars on mobile */
+    }
+
+    .main-container {
+        width: 100%; /* Ensure it takes full width */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
     .container {
-        padding: 10px;
+        padding: 10px; /* Reduce padding */
     }
 
     textarea {
@@ -191,20 +196,21 @@ table tr:hover {
 
     button {
         font-size: 14px;
-        padding: 8px 12px;
+        padding: 8px;
     }
 
-    .ads-container {
-        flex-direction: column;
-    }
-
-    .ad-sidebar {
-        max-width: none;
-        margin-bottom: 20px;
+    .form-section {
+        margin-bottom: 15px;
     }
 }
 
+/* Ensure images and videos scale properly */
 img, video {
     max-width: 100%;
     height: auto;
+}
+
+/* Improve readability on small screens */
+body {
+    font-size: 16px;
 }
