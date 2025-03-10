@@ -1,12 +1,13 @@
 ---
+layout: default
 title: "Visualizing Bitcoin Halvings with a Logarithmic Price Chart"
-description: "A Python script to plot historical Bitcoin prices with halving events on a logarithmic scale."
 date: 2025-03-10
+description: "A Python script to plot historical Bitcoin prices with halving events on a logarithmic scale."
 categories: [ai, data-science]
-tags: [Bitcoin, Python, Data Visualization, Finance]
+tags: [bitcoin, pthon, data visualization, finance]
 ---
 
-## Visualizing Bitcoin Halvings with a Logarithmic Price Chart
+# Visualizing Bitcoin Halvings with a Logarithmic Price Chart
 
 Bitcoin's price history is deeply influenced by its **halving events**, which reduce the mining reward by 50% approximately every four years. These halvings often precede major price movements, making them an essential factor for traders and analysts. 
 
