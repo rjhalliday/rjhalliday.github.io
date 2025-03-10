@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Visualizing Bitcoin Halvings with a Logarithmic Price Chart"
-date: 2025-03-10
+date: 2025-03-10 13:00:00 +1000
 description: "A Python script to plot historical Bitcoin prices with halving events on a logarithmic scale."
 categories: [ai, data-science]
 tags: [bitcoin, pthon, data visualization, finance]
