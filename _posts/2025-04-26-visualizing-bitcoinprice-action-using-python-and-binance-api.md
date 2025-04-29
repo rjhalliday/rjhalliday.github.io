@@ -1,5 +1,4 @@
 # 📈 Visualizing Bitcoin Price Action Using Python and Binance API
-# 📈 Visualizing 30 Days of Bitcoin Price Action Using Python and Binance API
 
 In this post, we'll learn how to pull **Bitcoin price data** from Binance, process it, and visualize the **last 30 days** of price action with a **candlestick chart**. This approach is useful for **technical analysis** or simply to understand market behavior over a set period.
 
