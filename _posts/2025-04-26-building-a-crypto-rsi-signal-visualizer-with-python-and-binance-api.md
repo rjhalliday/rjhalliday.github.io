@@ -7,10 +7,6 @@ categories: [technical-analysis, python]
 tags: [bitcoin, python, data visualization, finance, crypto]
 ---
 
-Sure! Here's a Markdown-formatted blog post that explains the Python script in clear, structured sections, followed by the complete source code.
-
----
-
 # 📊 Building a Crypto RSI Signal Visualizer with Python and Binance API
 
 In this tutorial, we’ll walk through a Python script that fetches historical candlestick data for Bitcoin (BTC/USDT) from the Binance API, calculates the **Relative Strength Index (RSI)**, and visualizes buy/sell signals using **mplfinance**. This is a great starting point for anyone looking to develop crypto trading indicators or learn financial data visualization in Python.
