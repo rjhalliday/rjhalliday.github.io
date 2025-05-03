@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Visualizing Bitcoin Drawdowns Using Yahoo Finance"
-date: 2025-05-06 07:00:00 +1000
+date: 2025-05-04 07:00:00 +1000
 description: "Graph BTC drawdowns using data from Yahoo Finance"
 categories: [technical-analysis, python]
 tags: [bitcoin, python, data visualization, finance, crypto, yfinance]
