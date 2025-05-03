@@ -7,10 +7,6 @@ categories: [technical-analysis, python]
 tags: [bitcoin, python, data visualization, finance, crypto, yfinance]
 ---
 
-Sure! Here's a detailed breakdown of your code in the form of a Markdown blog post, followed by the original code with comments added.
-
----
-
 # 📉 Visualizing Bitcoin Drawdowns Using Python and yFinance
 
 Bitcoin is famous for its dramatic price swings—soaring to new highs and plunging into deep drawdowns. In this post, we’ll analyze historical Bitcoin (BTC-USD) closing prices and identify **peaks** and **troughs** to measure the percentage decline from each all-time high.
