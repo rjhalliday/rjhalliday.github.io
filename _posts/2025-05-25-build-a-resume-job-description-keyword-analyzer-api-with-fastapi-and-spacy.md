@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Build a Resume vs Job Description Keyword Analyzer API with FastAPI and spaCy"
-date: 2025-05-2 22:09:00 +1000
+title: "Build a Resume Job Description Keyword Analyzer API with FastAPI and spaCy"
+date: 2025-05-25 09:00:00 +1000
 description: "Build a Resume vs Job Description Keyword Analyzer API with FastAPI and spaCy"
 categories: [fastapi, python]
 tags: [python, data visualization]
 ---
 
-# 🔍 Build a Resume vs Job Description Keyword Analyzer API with FastAPI and spaCy
+# 🔍 Build a Resume Job Description Keyword Analyzer API with FastAPI and spaCy
 
 Getting past automated resume screening systems is tough. These systems, called **ATS (Applicant Tracking Systems)**, scan your resume for keywords from the job description and filter out candidates who don’t match well enough. If you want to help job seekers understand how well their resumes match a job, a simple keyword comparison backend can be a great start — without the cost of expensive Large Language Model (LLM) API calls for every request.
 
