@@ -7,7 +7,7 @@ categories: [fastapi, python]
 tags: [python, data visualization]
 ---
 
-# 🧪 FastAPI Tutorial: Build a Complete CRUD API with Detailed Explanations
+# FastAPI Tutorial: Build a Complete CRUD API with Detailed Explanations
 
 This tutorial will walk through creating a **CRUD API using FastAPI**, a powerful Python web framework that's easy to use and incredibly fast.
 
@@ -36,7 +36,7 @@ Each HTTP method maps to a kind of action you want to perform on a resource, and
 
 ---
 
-## 🧰 Project Setup
+## Project Setup
 
 Set up your environment:
 
@@ -52,7 +52,7 @@ Create a file called `main.py`:
 
 ---
 
-## 🧱 Full FastAPI CRUD App (with Explanatory Comments)
+## Full FastAPI CRUD App (with Explanatory Comments)
 
 ```python
 from fastapi import FastAPI, HTTPException
@@ -139,7 +139,7 @@ def delete_todo(todo_id: int):
 
 ---
 
-## ▶️ Running Your App
+## Running Your App
 
 Start the development server:
 
@@ -166,7 +166,7 @@ curl -X POST http://127.0.0.1:8000/todos/ \
 
 Creates a new task.
 
-✅ **Expected Response**:
+**Expected Response**:
 
 ```json
 {
@@ -187,7 +187,7 @@ curl http://127.0.0.1:8000/todos/
 
 Lists all current tasks.
 
-✅ **Expected Response**:
+**Expected Response**:
 
 ```json
 [
@@ -210,7 +210,7 @@ curl http://127.0.0.1:8000/todos/1
 
 Fetches one task by ID.
 
-✅ **Expected Response**:
+**Expected Response**:
 
 ```json
 {
@@ -223,7 +223,7 @@ Fetches one task by ID.
 
 ---
 
-### ✏️ Update (`PUT`)
+### Update (`PUT`)
 
 ```bash
 curl -X PUT http://127.0.0.1:8000/todos/1 \
@@ -233,7 +233,7 @@ curl -X PUT http://127.0.0.1:8000/todos/1 \
 
 Replaces the task with new data.
 
-✅ **Expected Response**:
+**Expected Response**:
 
 ```json
 {
@@ -246,7 +246,7 @@ Replaces the task with new data.
 
 ---
 
-### 🗑️ Delete (`DELETE`)
+###  Delete (`DELETE`)
 
 ```bash
 curl -X DELETE http://127.0.0.1:8000/todos/1
@@ -254,7 +254,7 @@ curl -X DELETE http://127.0.0.1:8000/todos/1
 
 Removes the task.
 
-✅ **Expected Response**:
+**Expected Response**:
 
 ```json
 {
@@ -264,7 +264,7 @@ Removes the task.
 
 ---
 
-## 🧠 What Happens Behind the Scenes?
+## What Happens Behind the Scenes?
 
 Each route uses a Python function:
 
@@ -275,7 +275,7 @@ Each route uses a Python function:
 
 ---
 
-## ✅ Summary
+## Summary
 
 FastAPI handles **CRUD operations** with clarity and speed. Here's how the pieces fit together:
 
