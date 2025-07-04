@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Running a Local Ollama Model with LangChain: A Calculator Agent Example"
-date: 2025-06-22
+date: 2025-07-02
 description: "Running a Local Ollama Model with LangChain: A Calculator Agent Example."
 categories: [machine-learning, python, local-llm]
 tags: [langchain, ollama, local-llm, python, agents, llm, numexpr]
