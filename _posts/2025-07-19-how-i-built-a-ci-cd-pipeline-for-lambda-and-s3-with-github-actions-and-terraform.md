@@ -20,7 +20,7 @@ In this post, I’ll explain how all the pieces fit together and how I set up th
 
 ---
 
-## 🔧 Repo Structure
+## Repo Structure
 
 ```
 .
@@ -39,7 +39,7 @@ In this post, I’ll explain how all the pieces fit together and how I set up th
 
 ---
 
-## 🚀 Lambda Build and Deployment Flow
+## Lambda Build and Deployment Flow
 
 To deploy a Lambda function, I run:
 
@@ -145,7 +145,7 @@ This fully mirrors the frontend directory to S3, deleting anything that no longe
 
 ---
 
-## ⏩ Promoting Dev to Prod
+## Promoting Dev to Prod
 
 I manually trigger the `promote-to-prod.yml` workflow when I’m ready to promote a tested Dev build to Prod. Here's what it does:
 
@@ -190,7 +190,7 @@ This ensures that I never lose production content and that changes can be tested
 
 ---
 
-## 📦 Terraform Plan + Apply for Prod
+## Terraform Plan + Apply for Prod
 
 For infrastructure changes in Prod, I follow a strict two-phase workflow:
 
