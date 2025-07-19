@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lessons Learned from Deploying Large ML Models in AWS Lambda Containers"
-date: 2025-06-19
+date: 2025-07-19
 description: "Practical lessons I learned deploying a large ML model with sentence-transformers and Torch in an AWS Lambda container with Terraform and Docker."
 categories: [aws, lambda, machine-learning, terraform, devops]
 tags: [aws-lambda, serverless, sentence-transformers, docker, terraform, sbert]
