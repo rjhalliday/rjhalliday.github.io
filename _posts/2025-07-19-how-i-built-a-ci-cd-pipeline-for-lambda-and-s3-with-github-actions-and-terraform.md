@@ -44,14 +44,14 @@ In this post, I’ll explain how all the pieces fit together and how I set up th
 To deploy a Lambda function, I run:
 
 ```bash
-./scripts/deploy-lambda.sh resumescan-nlp-yake
+./scripts/deploy-lambda.sh function-name
 ```
 
 This does the following:
 
-1. **Checks the directory** `backend/resumescan-nlp-yake` exists
+1. **Checks the directory** `backend/function-name` exists
 
-2. **Validates AWS credentials** via the profile `githubactions.resumecow`
+2. **Validates AWS credentials** via the profile `githubactions.sitename`
 
 3. **Calculates a SHA-256 checksum** of the Lambda directory contents (excluding `.git`, `.pyc`, etc.) using:
 
@@ -68,7 +68,7 @@ This does the following:
    Example:
 
    ```
-   dev.resumescan-nlp-yake.2025-07-19T05-57-59Z.7a35ac1d
+   dev.function-name.2025-07-19T05-57-59Z.7a35ac1d
    ```
 
 5. **Builds and pushes the Docker image** to ECR, unless an image with the same checksum already exists
@@ -101,7 +101,7 @@ This ensures Lambda, API Gateway, roles, and other infra are in place.
 Using the same checksum method as the local build, the workflow tries to match the checksum against existing ECR image tags. If it can't find one, it exits with an error and a message like:
 
 ```
-Did you forget to run ./scripts/deploy-lambda.sh resumescan-nlp-yake locally?
+Did you forget to run ./scripts/deploy-lambda.sh function-name locally?
 ```
 
 ### 3. Update the Lambda Function
@@ -138,7 +138,7 @@ This replaces the placeholders with the actual Dev API URL and Git commit hash.
 Once `index.html` is generated, I upload the frontend to the Dev bucket:
 
 ```bash
-aws s3 sync ./frontend s3://dev.resumecow.com --delete
+aws s3 sync ./frontend s3://dev.sitename.com --delete
 ```
 
 This fully mirrors the frontend directory to S3, deleting anything that no longer exists locally.
@@ -173,7 +173,7 @@ It pushes the new tag using `aws ecr put-image`.
 
 ### 3. Update Prod Lambda to Use Prod Tag
 
-We then point the Prod Lambda function (e.g. `prod-resumescan-nlp-yake`) to the new image.
+We then point the Prod Lambda function (e.g. `prod-function-name`) to the new image.
 
 A check confirms that the image was applied correctly by comparing the resulting URI.
 
